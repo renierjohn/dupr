@@ -41,6 +41,7 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  sqlite: 0
   rabbit_hole: 0
   renify_auth: 0
   renify_dupr: 0
