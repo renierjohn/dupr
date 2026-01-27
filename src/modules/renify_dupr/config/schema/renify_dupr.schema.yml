@@ -1,0 +1,8 @@
+# Schema for the configuration files of the Renify dupr module.
+renify_dupr.settings:
+  type: config_object
+  label: 'Renify dupr settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'

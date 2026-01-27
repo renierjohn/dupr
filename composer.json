@@ -133,7 +133,8 @@
     },
     "require-dev": {
         "drupal/devel": "^5.5",
-        "orangepi_drupal/renify_auth": "@dev",
-        "orangepi_drupal/renify_courtmanager": "@dev"
+        "dupr/renify_auth": "@dev",
+        "dupr/renify_courtmanager": "@dev",
+        "dupr/renify_dupr": "@dev"
     }
 }

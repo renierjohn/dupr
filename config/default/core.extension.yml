@@ -42,6 +42,8 @@ module:
   path: 0
   path_alias: 0
   rabbit_hole: 0
+  renify_auth: 0
+  renify_dupr: 0
   rest: 0
   rest_api_access_token: 0
   rh_node: 0

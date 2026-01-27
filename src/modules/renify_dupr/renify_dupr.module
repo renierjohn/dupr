@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for renify_dupr module.
+ */
+
+function renify_dupr_form_alter(&$form, &$form_state, &$form_id) {
+  if ($form_id == 'renify_dupr_config') {
+    // dump($form_id);
+    // $data = \Drupal::service('renify_dupr.api_client')->searchAndSyncPlayer('renier sediego');
+    // dump($data);
+    \Drupal::service('renify_dupr.refresh_service')->refreshAllPlayers();
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function renify_dupr_cron() {
+  \Drupal::service('renify_dupr.refresh_service')->refreshAllPlayers();
+}

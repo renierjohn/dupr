@@ -4,12 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
-    - field.field.user.user.field_company_name
-    - field.field.user.user.field_court_logo
-    - field.field.user.user.field_court_logo_preview
-    - field.field.user.user.field_courts
     - field.field.user.user.field_location
-    - field.field.user.user.field_payment_method
     - field.field.user.user.field_slack_uri
     - field.field.user.user.field_social_media_link
     - field.field.user.user.field_subsciption
@@ -38,12 +33,7 @@ content:
     weight: 0
     region: content
 hidden:
-  field_company_name: true
-  field_court_logo: true
-  field_court_logo_preview: true
-  field_courts: true
   field_location: true
-  field_payment_method: true
   field_slack_uri: true
   field_social_media_link: true
   field_subsciption: true

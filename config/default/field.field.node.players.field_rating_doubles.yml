@@ -1,0 +1,23 @@
+uuid: f27b6e51-ffc0-4b35-a6dd-6ecd278f3925
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rating_doubles
+    - node.type.players
+id: node.players.field_rating_doubles
+field_name: field_rating_doubles
+entity_type: node
+bundle: players
+label: 'Rating Doubles'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

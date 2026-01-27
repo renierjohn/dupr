@@ -1,0 +1,21 @@
+uuid: daf472b0-a807-4754-8405-af40d8a0075f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_verified
+    - node.type.players
+id: node.players.field_verified
+field_name: field_verified
+entity_type: node
+bundle: players
+label: Verified
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cca1a2270a21c5fe0db45b052280911b",
+    "content-hash": "6bfef252f5969f2b7a0206226f499e46",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7553,12 +7553,12 @@
             }
         },
         {
-            "name": "orangepi_drupal/renify_auth",
+            "name": "dupr/renify_auth",
             "version": "dev-develop",
             "dist": {
                 "type": "path",
                 "url": "src/modules/renify_auth",
-                "reference": "53660294b5be47020ecc7c422628bd90cf177cee"
+                "reference": "248d8b49d7db8179bf654a24b1dfc68a436fb9d5"
             },
             "type": "drupal-custom-module",
             "transport-options": {
@@ -7567,12 +7567,26 @@
             }
         },
         {
-            "name": "orangepi_drupal/renify_courtmanager",
+            "name": "dupr/renify_courtmanager",
             "version": "dev-develop",
             "dist": {
                 "type": "path",
                 "url": "src/modules/renify_courtmanager",
-                "reference": "5af4afbd761cefde116a9710dbbb91c350cb0e53"
+                "reference": "571192c3423e52334faf1c26c697e25381cd3a0d"
+            },
+            "type": "drupal-custom-module",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "dupr/renify_dupr",
+            "version": "dev-develop",
+            "dist": {
+                "type": "path",
+                "url": "src/modules/renify_dupr",
+                "reference": "f58cde08d24a855b584deb6a2f6ff4e912b754ee"
             },
             "type": "drupal-custom-module",
             "transport-options": {
@@ -7634,8 +7648,9 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "drupal/inline_entity_form": 5,
-        "orangepi_drupal/renify_auth": 20,
-        "orangepi_drupal/renify_courtmanager": 20
+        "dupr/renify_auth": 20,
+        "dupr/renify_courtmanager": 20,
+        "dupr/renify_dupr": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

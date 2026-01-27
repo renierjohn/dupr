@@ -3,22 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_company_name
-    - field.field.user.user.field_court_logo
-    - field.field.user.user.field_court_logo_preview
-    - field.field.user.user.field_courts
     - field.field.user.user.field_location
-    - field.field.user.user.field_payment_method
     - field.field.user.user.field_slack_uri
     - field.field.user.user.field_social_media_link
     - field.field.user.user.field_subsciption
     - field.field.user.user.field_tawkto
     - field.field.user.user.user_picture
-    - image.style.thumbnail
   module:
     - field_group
-    - image
-    - inline_entity_form
     - social_link_field
     - user
 third_party_settings:
@@ -139,48 +131,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_company_name:
-    type: string_textfield
-    weight: 15
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_court_logo:
-    type: string_textfield
-    weight: 17
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_court_logo_preview:
-    type: image_image
-    weight: 18
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-  field_courts:
-    type: inline_entity_form_complex
-    weight: 1
-    region: content
-    settings:
-      form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: false
-      match_operator: CONTAINS
-      allow_duplicate: true
-      collapsible: true
-      collapsed: false
-      revision: false
-      removed_reference: optional
-    third_party_settings: {  }
   field_location:
     type: string_textfield
     weight: 16
@@ -188,24 +138,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_payment_method:
-    type: inline_entity_form_complex
-    weight: 20
-    region: content
-    settings:
-      form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: false
-      match_operator: CONTAINS
-      allow_duplicate: false
-      collapsible: true
-      collapsed: true
-      revision: false
-      removed_reference: delete
     third_party_settings: {  }
   field_slack_uri:
     type: string_textfield

@@ -3,12 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_company_name
-    - field.field.user.user.field_court_logo
-    - field.field.user.user.field_court_logo_preview
-    - field.field.user.user.field_courts
     - field.field.user.user.field_location
-    - field.field.user.user.field_payment_method
     - field.field.user.user.field_slack_uri
     - field.field.user.user.field_social_media_link
     - field.field.user.user.field_subsciption
@@ -27,41 +22,6 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_company_name:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 15
-    region: content
-  field_court_logo:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_court_logo_preview:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 8
-    region: content
-  field_courts:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 12
-    region: content
   field_location:
     type: string
     label: above
@@ -69,14 +29,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 13
-    region: content
-  field_payment_method:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 14
     region: content
   field_slack_uri:
     type: string

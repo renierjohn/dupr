@@ -1,0 +1,3 @@
+renify_dupr.config_form_info:
+  route_name: renify_dupr.dupr.config
+  title: 'DUPR Settings'

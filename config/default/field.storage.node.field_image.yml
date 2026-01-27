@@ -1,18 +1,27 @@
-uuid: 411b18d0-a00d-4a99-af08-cdca9f5489d0
+uuid: ad14c5f2-53dd-47fb-a475-46e48b71ba9c
 langcode: en
 status: true
 dependencies:
   module:
+    - file
+    - image
     - node
 id: node.field_image
 field_name: field_image
 entity_type: node
-type: string
+type: image
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
-module: core
+  target_type: file
+  display_field: false
+  display_default: true
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+module: image
 locked: false
 cardinality: 1
 translatable: true

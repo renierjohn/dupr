@@ -1,0 +1,6 @@
+renify_dupr.config_form_link:
+  title: 'DUPR Login'
+  description: 'Configure DUPR API credentials and synchronization settings.'
+  parent: system.admin_config_system
+  route_name: renify_dupr.dupr.config
+  weight: 10
