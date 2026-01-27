@@ -1,0 +1,18 @@
+uuid: 374616a6-f1e0-4967-83de-82392eed8546
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Courts
+type: courts
+description: 'List of Courts'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: true

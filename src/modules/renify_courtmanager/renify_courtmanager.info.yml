@@ -1,0 +1,5 @@
+name: 'Renify Court Manager'
+type: module
+description: 'Handles API for Courts CRUD.'
+package: Renify
+core_version_requirement: ^10 || ^11

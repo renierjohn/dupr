@@ -1,0 +1,33 @@
+uuid: 3b3888d7-d570-488f-8273-eed2209b029e
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_subsciption
+field_name: field_subsciption
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: free
+      label: Free
+    -
+      value: basic
+      label: Basic
+    -
+      value: standard
+      label: Standard
+    -
+      value: premium
+      label: Premium
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

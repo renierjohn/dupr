@@ -1,0 +1,19 @@
+uuid: 47ef7d09-584e-401c-9a2e-705551724559
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dayspecificunavailablehour
+    - node.type.courts
+id: node.courts.field_dayspecificunavailablehour
+field_name: field_dayspecificunavailablehour
+entity_type: node
+bundle: courts
+label: 'Unavailable Day Time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

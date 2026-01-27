@@ -1,0 +1,21 @@
+uuid: 54e268b0-7833-44b9-93d0-d0b90c10047d
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_tawkto
+field_name: field_tawkto
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

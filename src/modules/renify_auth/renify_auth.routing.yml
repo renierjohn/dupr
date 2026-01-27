@@ -1,0 +1,7 @@
+renify_auth.login:
+  path: '/api/renify/login'
+  defaults:
+    _controller: '\Drupal\renify_auth\Controller\LoginController::authenticate'
+  methods: [POST]
+  requirements:
+    _access: 'TRUE' # Open to public because it is a login form

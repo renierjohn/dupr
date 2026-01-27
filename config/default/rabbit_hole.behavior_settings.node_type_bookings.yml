@@ -1,0 +1,14 @@
+uuid: 4865cd03-6a84-47af-a298-45ed2c2a2516
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.bookings
+id: node_type_bookings
+entity_type_id: node_type
+entity_id: bookings
+action: page_not_found
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

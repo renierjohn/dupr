@@ -1,0 +1,21 @@
+uuid: 2dabedd1-a3ff-4cd6-948f-966720c394b9
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_court_logo
+field_name: field_court_logo
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

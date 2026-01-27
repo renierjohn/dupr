@@ -1,0 +1,20 @@
+uuid: e51c8221-0c46-49af-90ce-821804050ab0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+id: node.field_court_owner
+field_name: field_court_owner
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

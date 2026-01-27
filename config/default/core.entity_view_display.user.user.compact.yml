@@ -1,0 +1,51 @@
+uuid: 1883f5c3-a268-4579-b277-8bc3465d343b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.field_company_name
+    - field.field.user.user.field_court_logo
+    - field.field.user.user.field_court_logo_preview
+    - field.field.user.user.field_courts
+    - field.field.user.user.field_location
+    - field.field.user.user.field_payment_method
+    - field.field.user.user.field_slack_uri
+    - field.field.user.user.field_social_media_link
+    - field.field.user.user.field_subsciption
+    - field.field.user.user.field_tawkto
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: 00zr_RBdTjPjBGITD3h4c1ESQZimjdVCcHGt1trLqIY
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  user_picture:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_company_name: true
+  field_court_logo: true
+  field_court_logo_preview: true
+  field_courts: true
+  field_location: true
+  field_payment_method: true
+  field_slack_uri: true
+  field_social_media_link: true
+  field_subsciption: true
+  field_tawkto: true
+  member_for: true

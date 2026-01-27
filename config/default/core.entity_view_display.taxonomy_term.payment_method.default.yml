@@ -1,0 +1,43 @@
+uuid: 692a7bce-9509-4c61-a194-0fd765a7b099
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.payment_method.field_payment_image
+    - field.field.taxonomy_term.payment_method.field_payment_image_preview
+    - taxonomy.vocabulary.payment_method
+  module:
+    - image
+    - text
+id: taxonomy_term.payment_method.default
+targetEntityType: taxonomy_term
+bundle: payment_method
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_payment_image:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_payment_image_preview:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

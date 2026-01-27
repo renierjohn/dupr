@@ -1,0 +1,9 @@
+uuid: 16368887-c6a6-4c8e-993c-4769ca48fd68
+langcode: en
+status: true
+dependencies: {  }
+name: 'Court Type'
+vid: court_type
+description: null
+weight: 0
+new_revision: false

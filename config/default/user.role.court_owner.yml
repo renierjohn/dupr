@@ -1,0 +1,16 @@
+uuid: a7f07b4a-f9d2-4b6e-a61f-ef0f56169a76
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.courts
+  module:
+    - node
+id: court_owner
+label: 'Court Owner'
+weight: 4
+is_admin: false
+permissions:
+  - 'create courts content'
+  - 'delete own courts content'
+  - 'edit own courts content'

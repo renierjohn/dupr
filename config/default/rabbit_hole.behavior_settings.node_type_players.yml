@@ -1,0 +1,14 @@
+uuid: 25f19495-9dbf-4b81-9453-6fd8954f35f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.players
+id: node_type_players
+entity_type_id: node_type
+entity_id: players
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

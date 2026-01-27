@@ -1,0 +1,21 @@
+uuid: bf27192d-fcb7-4664-a485-568c795f3c8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_booked_datetime
+    - node.type.bookings
+  module:
+    - datetime
+id: node.bookings.field_booked_datetime
+field_name: field_booked_datetime
+entity_type: node
+bundle: bookings
+label: 'Booked Datetime'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

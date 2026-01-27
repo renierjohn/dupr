@@ -1,0 +1,6 @@
+name: 'Renify Auth'
+type: module
+description: 'Handles external authentication and returns an API token.'
+core_version_requirement: ^9 || ^10 || ^11
+dependencies:
+  - rest_api_access_token

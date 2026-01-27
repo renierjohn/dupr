@@ -1,0 +1,14 @@
+uuid: 86066629-390c-4651-85b4-aee81504ffe2
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.court_owner
+  module:
+    - user
+id: user_add_role_action.court_owner
+label: 'Add the Court Owner role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: court_owner

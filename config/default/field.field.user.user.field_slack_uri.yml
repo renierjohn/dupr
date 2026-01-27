@@ -1,0 +1,20 @@
+uuid: 099f0a8c-189d-43f2-b160-5a1c52cd0495
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_slack_uri
+  module:
+    - user
+id: user.user.field_slack_uri
+field_name: field_slack_uri
+entity_type: user
+bundle: user
+label: 'Slack URI'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

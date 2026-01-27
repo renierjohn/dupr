@@ -1,0 +1,27 @@
+uuid: a7b0fbb4-a987-4139-96f5-4da614b35ebc
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_field
+    - node
+id: node.field_unavailable_day_time_ui
+field_name: field_unavailable_day_time_ui
+entity_type: node
+type: custom
+settings:
+  columns:
+    day:
+      name: day
+      type: string
+      length: 255
+    time_range:
+      name: time_range
+      type: time_range
+module: custom_field
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: ffbb65c4-1859-484a-b743-74f7f2ee20ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_unavailabledays
+    - node.type.courts
+id: node.courts.field_unavailabledays
+field_name: field_unavailabledays
+entity_type: node
+bundle: courts
+label: 'Unavailable Time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

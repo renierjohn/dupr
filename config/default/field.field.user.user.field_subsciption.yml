@@ -1,0 +1,21 @@
+uuid: ff7ee9cd-c73c-498a-aff6-75c3a0d9a48d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_subsciption
+  module:
+    - options
+    - user
+id: user.user.field_subsciption
+field_name: field_subsciption
+entity_type: user
+bundle: user
+label: Subsciption
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

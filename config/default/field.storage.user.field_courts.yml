@@ -1,0 +1,20 @@
+uuid: 74a37bce-f6d8-4d4c-908d-f3282a93a5ae
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+id: user.field_courts
+field_name: field_courts
+entity_type: user
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

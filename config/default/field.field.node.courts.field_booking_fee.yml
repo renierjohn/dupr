@@ -1,0 +1,23 @@
+uuid: e8955c53-ac21-46a8-818f-d45caef5b645
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_booking_fee
+    - node.type.courts
+id: node.courts.field_booking_fee
+field_name: field_booking_fee
+entity_type: node
+bundle: courts
+label: 'Booking Fee'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

@@ -1,0 +1,63 @@
+uuid: 12569c7f-0f65-46f1-bd92-aef836f6e13f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_unavailable_day_time_ui
+    - node.type.courts
+  module:
+    - custom_field
+id: node.courts.field_unavailable_day_time_ui
+field_name: field_unavailable_day_time_ui
+entity_type: node
+bundle: courts
+label: 'Unavailable Day Time (UI)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  add_more_label: ''
+  field_settings:
+    day:
+      label: Day
+      check_empty: false
+      required: false
+      translatable: false
+      description: ''
+      description_display: after
+      prefix: ''
+      suffix: ''
+      allowed_values:
+        -
+          key: monday
+          label: Monday
+        -
+          key: tuesday
+          label: Tuesday
+        -
+          key: wednesday
+          label: Wednesday
+        -
+          key: thursday
+          label: Thursday
+        -
+          key: friday
+          label: Friday
+        -
+          key: saturday
+          label: Saturday
+        -
+          key: sunday
+          label: Sunday
+    time_range:
+      label: 'Time range'
+      check_empty: false
+      required: false
+      translatable: false
+      description: ''
+      description_display: after
+      seconds_enabled: false
+      seconds_step: 5
+field_type: custom

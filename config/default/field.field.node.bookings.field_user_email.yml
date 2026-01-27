@@ -1,0 +1,19 @@
+uuid: 9c52bbc7-78c9-4004-88e3-b95a5ea1da57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_user_email
+    - node.type.bookings
+id: node.bookings.field_user_email
+field_name: field_user_email
+entity_type: node
+bundle: bookings
+label: 'User Email'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

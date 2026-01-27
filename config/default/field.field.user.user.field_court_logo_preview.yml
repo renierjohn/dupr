@@ -1,0 +1,38 @@
+uuid: 5abaf06c-5391-45b5-9128-1892c59efbd8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_court_logo_preview
+  module:
+    - image
+    - user
+id: user.user.field_court_logo_preview
+field_name: field_court_logo_preview
+entity_type: user
+bundle: user
+label: 'Court Logo Preview'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: courtowner
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

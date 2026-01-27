@@ -1,0 +1,6 @@
+signature_verification: 0
+cache_endpoints: 0
+cache_endpoints_lifetime: '0'
+token_lifetime_hours: '0'
+login_by_name: 1
+login_by_mail: 1
