@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_dupr_account
     - field.field.user.user.field_location
     - field.field.user.user.field_slack_uri
     - field.field.user.user.field_social_media_link
@@ -11,21 +12,20 @@ dependencies:
     - field.field.user.user.user_picture
   module:
     - field_group
-    - social_link_field
+    - inline_entity_form
+    - path
     - user
 third_party_settings:
   field_group:
     group_group:
       children:
         - group_credentials
-        - group_data
-        - group_payment
-        - group_notifications
+        - group_dupr
         - group_courts
       label: Group
       region: content
       parent_name: ''
-      weight: 2
+      weight: 1
       format_type: tabs
       format_settings:
         classes: ''
@@ -52,15 +52,12 @@ third_party_settings:
         required_fields: true
     group_data:
       children:
-        - field_company_name
         - field_location
-        - field_court_logo
-        - field_court_logo_preview
         - field_social_media_link
       label: Data
-      region: content
-      parent_name: group_group
-      weight: 14
+      region: hidden
+      parent_name: group_notifications
+      weight: 6
       format_type: tab
       format_settings:
         classes: ''
@@ -72,12 +69,13 @@ third_party_settings:
         required_fields: true
     group_notifications:
       children:
-        - field_tawkto
         - field_slack_uri
+        - field_tawkto
+        - group_data
       label: 'Advance Features'
-      region: content
-      parent_name: group_group
-      weight: 16
+      region: hidden
+      parent_name: ''
+      weight: 9
       format_type: tab
       format_settings:
         classes: ''
@@ -88,8 +86,7 @@ third_party_settings:
         description: ''
         required_fields: true
     group_courts:
-      children:
-        - field_courts
+      children: {  }
       label: Courts
       region: hidden
       parent_name: group_group
@@ -104,12 +101,27 @@ third_party_settings:
         description: ''
         required_fields: true
     group_payment:
-      children:
-        - field_payment_method
+      children: {  }
       label: Payment
+      region: hidden
+      parent_name: ''
+      weight: 8
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_dupr:
+      children:
+        - field_dupr_account
+      label: DUPR
       region: content
       parent_name: group_group
-      weight: 15
+      weight: 14
       format_type: tab
       format_settings:
         classes: ''
@@ -131,29 +143,23 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_location:
-    type: string_textfield
-    weight: 16
+  field_dupr_account:
+    type: inline_entity_form_complex
+    weight: 3
     region: content
     settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_slack_uri:
-    type: string_textfield
-    weight: 6
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_social_media_link:
-    type: social_links
-    weight: 19
-    region: content
-    settings:
-      select_social: false
-      disable_weight: false
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: false
+      allow_existing: true
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: false
+      collapsed: false
+      revision: false
+      removed_reference: keep
     third_party_settings: {  }
   field_subsciption:
     type: options_select
@@ -161,15 +167,17 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_tawkto:
-    type: string_textfield
-    weight: 5
+  path:
+    type: path
+    weight: 4
     region: content
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
 hidden:
+  field_location: true
+  field_slack_uri: true
+  field_social_media_link: true
+  field_tawkto: true
   language: true
   timezone: true
   user_picture: true

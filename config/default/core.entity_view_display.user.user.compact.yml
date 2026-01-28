@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_dupr_account
     - field.field.user.user.field_location
     - field.field.user.user.field_slack_uri
     - field.field.user.user.field_social_media_link
@@ -33,9 +34,11 @@ content:
     weight: 0
     region: content
 hidden:
+  field_dupr_account: true
   field_location: true
   field_slack_uri: true
   field_social_media_link: true
   field_subsciption: true
   field_tawkto: true
   member_for: true
+  search_api_excerpt: true

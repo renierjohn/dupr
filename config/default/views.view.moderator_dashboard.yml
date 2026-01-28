@@ -1,26 +1,30 @@
-uuid: c4e87a15-def3-4a6c-87d6-4a22bb9b6fa9
+uuid: 04175414-981c-4c5f-b619-51053e5abab9
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_age
+    - field.storage.node.field_awards
     - field.storage.node.field_dupr_id
     - field.storage.node.field_image
-    - field.storage.node.field_location
     - field.storage.node.field_rating_doubles
     - field.storage.node.field_rating_singles
-    - image.style.medium
-    - search_api.index.player
+    - image.style.thumbnail
+    - node.type.players
+    - system.menu.main
+    - user.role.administrator
+    - user.role.moderator
   module:
     - image
-    - search_api
-id: players_search_api
-label: 'Players Search API'
+    - node
+    - text
+    - user
+id: moderator_dashboard
+label: 'Moderator Dashboard'
 module: views
 description: ''
 tag: ''
-base_table: search_api_index_player
-base_field: search_api_id
+base_table: node_field_data
+base_field: nid
 display:
   default:
     id: default
@@ -28,17 +32,16 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'DUPR Rated Players'
+      title: Dashboard
       fields:
         field_image:
           id: field_image
-          table: search_api_datasource_player_entity_node
+          table: node__field_image
           field: field_image
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          plugin_id: search_api_field
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -76,7 +79,7 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
+          empty: N/A
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
@@ -84,7 +87,7 @@ display:
           type: image
           settings:
             image_link: ''
-            image_style: medium
+            image_style: thumbnail
             image_loading:
               attribute: lazy
           group_column: ''
@@ -97,23 +100,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
         title:
           id: title
-          table: search_api_datasource_player_entity_node
+          table: node_field_data
           field: title
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: node
-          plugin_id: search_api_field
-          label: ''
+          entity_field: title
+          plugin_id: field
+          label: Name
           exclude: false
           alter:
             alter_text: false
@@ -133,8 +130,8 @@ display:
             target: ''
             nl2br: false
             max_length: 0
-            word_boundary: true
-            ellipsis: true
+            word_boundary: false
+            ellipsis: false
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -168,23 +165,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
         field_dupr_id:
           id: field_dupr_id
-          table: search_api_datasource_player_entity_node
+          table: node__field_dupr_id
           field: field_dupr_id
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          plugin_id: search_api_field
-          label: ''
+          plugin_id: field
+          label: DUPR
           exclude: false
           alter:
             alter_text: false
@@ -239,164 +228,14 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-        field_age:
-          id: field_age
-          table: search_api_datasource_player_entity_node
-          field: field_age
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          plugin_id: search_api_field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-        field_location:
-          id: field_location
-          table: search_api_datasource_player_entity_node
-          field: field_location
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          plugin_id: search_api_field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
         field_rating_doubles:
           id: field_rating_doubles
-          table: search_api_datasource_player_entity_node
+          table: node__field_rating_doubles
           field: field_rating_doubles
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          plugin_id: search_api_field
+          plugin_id: field
           label: Doubles
           exclude: false
           alter:
@@ -430,11 +269,11 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
+          empty: NR
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
@@ -455,33 +294,14 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api_numeric
-          fallback_options:
-            set_precision: false
-            precision: 0
-            decimal: .
-            separator: ','
-            format_plural: false
-            format_plural_string: !!binary MQNAY291bnQ=
-            prefix: ''
-            suffix: ''
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-            format_plural_values:
-              - '1'
-              - '@count'
         field_rating_singles:
           id: field_rating_singles
-          table: search_api_datasource_player_entity_node
+          table: node__field_rating_singles
           field: field_rating_singles
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          plugin_id: search_api_field
+          plugin_id: field
           label: Singles
           exclude: false
           alter:
@@ -515,11 +335,11 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
+          empty: NR
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
@@ -540,34 +360,79 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api_numeric
-          fallback_options:
-            set_precision: false
-            precision: 0
-            decimal: .
-            separator: ','
-            format_plural: false
-            format_plural_string: !!binary MQNAY291bnQ=
-            prefix: ''
-            suffix: ''
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-            format_plural_values:
-              - '1'
-              - '@count'
-        url:
-          id: url
-          table: search_api_index_player
-          field: url
+        field_awards:
+          id: field_awards
+          table: node__field_awards
+          field: field_awards
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: search_api
+          plugin_id: field
+          label: 'Podium Status'
+          exclude: false
+          alter:
+            alter_text: true
+            text: "{% if field_awards %}\r\nYes\r\n{% else %}\r\nNone\r\n{% endif %}"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: None
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        operations:
+          id: operations
+          table: node
+          field: operations
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: entity_operations
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -607,16 +472,13 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          link_to_item: false
-          use_highlighting: false
-          multi_type: separator
-          multi_separator: ', '
+          destination: false
       pager:
         type: full
         options:
           offset: 0
           pagination_heading_level: h4
-          items_per_page: 10
+          items_per_page: 20
           total_pages: null
           id: 0
           tags:
@@ -636,67 +498,92 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Search
-          reset_button: true
-          reset_button_label: Clear
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: none
-        options: {  }
+        type: role
+        options:
+          role:
+            administrator: administrator
+            moderator: moderator
       cache:
-        type: search_api_none
+        type: tag
         options: {  }
       empty: {  }
       sorts:
-        title:
-          id: title
-          table: search_api_index_player
-          field: title
+        created:
+          id: created
+          table: node_field_data
+          field: created
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: search_api
-          order: ASC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
           expose:
             label: ''
             field_identifier: ''
           exposed: false
+          granularity: second
       arguments: {  }
       filters:
-        search_api_fulltext:
-          id: search_api_fulltext
-          table: search_api_index_player
-          field: search_api_fulltext
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            players: players
+          group: 1
+        title:
+          id: title
+          table: node_field_data
+          field: title
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: search_api_fulltext
-          operator: and
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: contains
           value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: search_api_fulltext_op
-            label: Search
+            operator_id: title_op
+            label: Name
             description: ''
             use_operator: false
-            operator: search_api_fulltext_op
+            operator: title_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: key
+            identifier: title
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-            expose_fields: false
-            placeholder: 'Pleyer Name or DUPR ID'
-            searched_fields_id: search_api_fulltext_searched_fields
-            value_maxlength: 128
-            value_max_words: null
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -709,22 +596,140 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          parse_mode: terms
-          min_length: 2
-          fields:
-            - field_awards
-            - field_dupr_id_1
-            - title
+        field_dupr_id_value:
+          id: field_dupr_id_value
+          table: node__field_dupr_id
+          field: field_dupr_id_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_dupr_id_value_op
+            label: DUPR
+            description: ''
+            use_operator: false
+            operator: field_dupr_id_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: dupr
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_awards_value:
+          id: field_awards_value
+          table: node__field_awards
+          field: field_awards_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_awards_value_op
+            label: 'Awards (field_awards)'
+            description: null
+            use_operator: false
+            operator: field_awards_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_awards_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: null
+          is_grouped: true
+          group_info:
+            label: 'Has been Podium'
+            description: ''
+            identifier: status
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: 'Yes'
+                operator: 'not empty'
+                value: ''
+              2:
+                title: 'No'
+                operator: empty
+                value: ''
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
-        type: default
+        type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            title: title
+            operations: operations
+          default: '-1'
+          info:
+            title:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            operations:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
+          class: ''
       row:
         type: fields
-      query:
-        type: search_api_query
         options:
-          bypass_access: false
-          skip_access: false
-          preserve_facet_query_args: false
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
           query_tags: {  }
       relationships: {  }
       header: {  }
@@ -738,15 +743,13 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
+        - user.roles
       tags:
-        - 'config:field.storage.node.field_age'
+        - 'config:field.storage.node.field_awards'
         - 'config:field.storage.node.field_dupr_id'
         - 'config:field.storage.node.field_image'
-        - 'config:field.storage.node.field_location'
         - 'config:field.storage.node.field_rating_doubles'
         - 'config:field.storage.node.field_rating_singles'
-        - 'config:search_api.index.player'
-        - 'search_api_list:player'
   page_1:
     id: page_1
     display_title: Page
@@ -754,7 +757,16 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: search
+      path: admin/players
+      menu:
+        type: normal
+        title: Dashboard
+        description: ''
+        weight: 0
+        expanded: false
+        menu_name: main
+        parent: ''
+        context: '0'
     cache_metadata:
       max-age: -1
       contexts:
@@ -763,12 +775,10 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
+        - user.roles
       tags:
-        - 'config:field.storage.node.field_age'
+        - 'config:field.storage.node.field_awards'
         - 'config:field.storage.node.field_dupr_id'
         - 'config:field.storage.node.field_image'
-        - 'config:field.storage.node.field_location'
         - 'config:field.storage.node.field_rating_doubles'
         - 'config:field.storage.node.field_rating_singles'
-        - 'config:search_api.index.player'
-        - 'search_api_list:player'

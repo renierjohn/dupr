@@ -1,0 +1,22 @@
+uuid: ddecc1b8-91cc-4614-9d70-1f1c6870a5d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.players
+    - workflows.workflow.editorial
+  module:
+    - content_moderation
+    - node
+id: moderator
+label: Moderator
+weight: 5
+is_admin: false
+permissions:
+  - 'edit any players content'
+  - 'edit own players content'
+  - 'use editorial transition back_for_review'
+  - 'use editorial transition published'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view players revisions'
