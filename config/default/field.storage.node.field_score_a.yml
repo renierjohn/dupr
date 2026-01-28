@@ -1,0 +1,20 @@
+uuid: c7450dd2-221e-45b6-ad8f-f289b3a22c08
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_score_a
+field_name: field_score_a
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

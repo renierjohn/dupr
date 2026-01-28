@@ -1,8 +1,23 @@
 services:
   renify_dupr.api_client:
     class: Drupal\renify_dupr\Service\DuprApiClient
-    arguments: ['@http_client', '@config.factory', '@entity_type.manager']
+    arguments:
+      - '@http_client'
+      - '@config.factory'
+      - '@entity_type.manager'
 
   renify_dupr.refresh_service:
     class: Drupal\renify_dupr\Service\DuprRefreshService
-    arguments: ['@http_client', '@config.factory', '@entity_type.manager', '@file.repository']
+    arguments:
+      - '@http_client'
+      - '@config.factory'
+      - '@entity_type.manager'
+      - '@file.repository'
+
+  renify_dupr.match_service:
+    class: Drupal\renify_dupr\Service\DUPRmatchService
+    arguments:
+      - '@http_client'
+      - '@config.factory'
+      - '@entity_type.manager'
+      - '@logger.factory'

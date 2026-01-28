@@ -71,6 +71,6 @@ final class DUPRsearchController extends ControllerBase {
         return new CacheableJsonResponse(['error' => $e->getMessage()], 500);
       }
 
-      return new CacheableJsonResponse(['message' => 'Not found'], 404);
+      return new CacheableJsonResponse(['message' => 'API Key missing'], 404);
     }
 }

@@ -1,100 +1,110 @@
-uuid: b53c15cd-4c4c-4540-a52c-4b403be1f181
+uuid: 1d5a61e1-cf77-447d-9130-40d53fb9b35d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.players.field_age
-    - field.field.node.players.field_awards
-    - field.field.node.players.field_dupr_id
-    - field.field.node.players.field_gender
-    - field.field.node.players.field_image
-    - field.field.node.players.field_location
-    - field.field.node.players.field_rating_doubles
-    - field.field.node.players.field_rating_singles
-    - field.field.node.players.field_user_id
-    - field.field.node.players.field_verified
-    - image.style.thumbnail
-    - node.type.players
+    - field.field.node.matches.field_event_date
+    - field.field.node.matches.field_event_format
+    - field.field.node.matches.field_location
+    - field.field.node.matches.field_match_id
+    - field.field.node.matches.field_score_a
+    - field.field.node.matches.field_score_b
+    - field.field.node.matches.field_team_a
+    - field.field.node.matches.field_team_b
+    - field.field.node.matches.field_team_winner
+    - field.field.node.matches.field_venue
+    - field.field.node.matches.field_verified
+    - node.type.matches
   module:
-    - image
     - path
-    - text
-id: node.players.default
+id: node.matches.default
 targetEntityType: node
-bundle: players
+bundle: matches
 mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_age:
+  field_event_date:
+    type: datetime_timestamp
+    weight: 123
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_event_format:
     type: string_textfield
-    weight: 12
+    weight: 124
     region: content
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_awards:
-    type: text_textarea
-    weight: 14
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_dupr_id:
-    type: string_textfield
-    weight: 2
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_gender:
-    type: string_textfield
-    weight: 11
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_image:
-    type: image_image
-    weight: 13
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
     third_party_settings: {  }
   field_location:
     type: string_textfield
-    weight: 10
+    weight: 9
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_rating_doubles:
-    type: number
-    weight: 9
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_rating_singles:
-    type: number
-    weight: 8
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_user_id:
+  field_match_id:
     type: string_textfield
-    weight: 3
+    weight: 121
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_score_a:
+    type: number
+    weight: 128
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_score_b:
+    type: number
+    weight: 129
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_team_a:
+    type: entity_reference_autocomplete
+    weight: 125
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_team_b:
+    type: entity_reference_autocomplete
+    weight: 126
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_team_winner:
+    type: entity_reference_autocomplete
+    weight: 127
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_venue:
+    type: string_textfield
+    weight: 122
     region: content
     settings:
       size: 60
@@ -109,20 +119,20 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 7
+    weight: 120
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: -5
     region: content
     settings:
       size: 60
@@ -130,7 +140,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS

@@ -1,0 +1,29 @@
+uuid: 0ee4817b-2e99-4c2b-ae6d-889f7fbe5db2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_team_b
+    - node.type.matches
+    - node.type.players
+id: node.matches.field_team_b
+field_name: field_team_b
+entity_type: node
+bundle: matches
+label: 'Team B'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      players: players
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

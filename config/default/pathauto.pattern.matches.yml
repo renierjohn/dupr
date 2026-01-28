@@ -1,0 +1,22 @@
+uuid: 597c20ed-df9e-401a-801a-08d5f0331330
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: matches
+label: Matches
+type: 'canonical_entities:node'
+pattern: '/match/[node:field_match_id]'
+selection_criteria:
+  43ce4479-2bb7-4611-be2d-5287b12a1b79:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 43ce4479-2bb7-4611-be2d-5287b12a1b79
+    context_mapping:
+      node: node
+    bundles:
+      matches: matches
+selection_logic: and
+weight: -5
+relationships: {  }

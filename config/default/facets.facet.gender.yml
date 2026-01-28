@@ -1,0 +1,62 @@
+uuid: aa65d63d-eb19-42eb-b478-fbaf3adf61b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.player
+    - views.view.players_search_api
+  module:
+    - search_api
+id: gender
+name: Gender
+weight: 0
+min_count: 1
+missing: false
+missing_label: others
+url_alias: gender
+facet_source_id: 'search_api:views_page__players_search_api__page_1'
+field_identifier: field_gender
+query_operator: or
+hard_limit: 0
+exclude: false
+use_hierarchy: false
+keep_hierarchy_parents_active: false
+hierarchy:
+  type: taxonomy
+  config: {  }
+expand_hierarchy: false
+enable_parent_when_child_gets_disabled: true
+widget:
+  type: checkbox
+  config:
+    show_numbers: false
+    soft_limit: 0
+    show_reset_link: false
+    reset_text: 'Show all'
+    hide_reset_when_no_selection: false
+    soft_limit_settings:
+      show_less_label: 'Show less'
+      show_more_label: 'Show more'
+empty_behavior:
+  behavior: none
+only_visible_when_facet_source_is_visible: true
+show_only_one_result: false
+show_title: false
+processor_configs:
+  hierarchy_processor:
+    processor_id: hierarchy_processor
+    weights:
+      build: 100
+    settings: {  }
+  replace:
+    processor_id: replace
+    weights:
+      post_query: 50
+    settings:
+      replacements: "male|Male\r\nfemale|Female"
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: 50
+      build: 15
+    settings: {  }

@@ -1,0 +1,6 @@
+services:
+  renify_dupr.commands:
+    class: \Drupal\renify_dupr\Drush\Commands\DuprCommands
+    arguments: ['@entity_type.manager', '@renify_dupr.refresh_service', '@renify_dupr.match_service']
+    tags:
+      - { name: drush.command }

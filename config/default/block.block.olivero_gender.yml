@@ -1,0 +1,29 @@
+uuid: 79028618-99c1-46f2-9539-f6b10c2743e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.gender
+  module:
+    - facets
+    - system
+  theme:
+    - olivero
+id: olivero_gender
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: 'facet_block:gender'
+settings:
+  id: 'facet_block:gender'
+  label: Gender
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: olivero_gender
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search

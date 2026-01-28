@@ -1,0 +1,23 @@
+uuid: b370af50-45c4-4c1c-af39-c6966c27f138
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_score_a
+    - node.type.matches
+id: node.matches.field_score_a
+field_name: field_score_a
+entity_type: node
+bundle: matches
+label: 'Score A'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 20
+  prefix: ''
+  suffix: ''
+field_type: integer

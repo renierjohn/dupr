@@ -15,6 +15,7 @@ module:
   ckeditor5: 0
   comment: 0
   config: 0
+  config_ignore: 0
   config_split: 0
   contextual: 0
   custom_field: 0
@@ -23,6 +24,7 @@ module:
   devel: 0
   dynamic_page_cache: 0
   editor: 0
+  facets: 0
   field: 0
   field_group: 0
   field_ui: 0
@@ -41,25 +43,24 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
-  sqlite: 0
-  rabbit_hole: 0
   renify_auth: 0
   renify_dupr: 0
   rest: 0
   rest_api_access_token: 0
-  rh_node: 0
-  rh_taxonomy: 0
-  search: 0
+  search_api: 0
+  search_api_db: 0
   serialization: 0
   shortcut: 0
   social_link_field: 0
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   toolbar: 0
   update: 0
   user: 0
   views_ui: 0
+  pathauto: 1
   views: 10
   standard: 1000
 theme:

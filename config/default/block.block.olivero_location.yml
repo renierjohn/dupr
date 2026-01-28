@@ -1,0 +1,29 @@
+uuid: cf9491af-7c04-4908-9f20-af8898f8ff44
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.location
+  module:
+    - facets
+    - system
+  theme:
+    - olivero
+id: olivero_location
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: 'facet_block:location'
+settings:
+  id: 'facet_block:location'
+  label: Location
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: olivero_location
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search

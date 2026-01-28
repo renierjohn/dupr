@@ -1,0 +1,19 @@
+uuid: 717a911f-f7fc-411f-8acf-361859908188
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_awards
+field_name: field_awards
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

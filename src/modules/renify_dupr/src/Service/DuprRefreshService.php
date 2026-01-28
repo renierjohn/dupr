@@ -20,6 +20,25 @@ class DuprRefreshService {
     protected FileRepositoryInterface $fileRepository // Injected
   ) {}
 
+
+  /**
+   * Batch callback for processing a single player.
+   */
+  public function refreshAllPlayersByBatch(int $nid, array &$context): void {
+    $token = $this->configFactory->get('renify_dupr.settings')->get('secretkey');
+    $storage = $this->entityTypeManager->getStorage('node');
+    $player = $storage->load($nid);
+
+    if ($player && !$player->get('field_user_id')->isEmpty()) {
+      $uid = $player->get('field_user_id')->value;
+      $this->refreshSinglePlayer($player, $uid, $token);
+
+      // Update batch message
+      $context['message'] = "Refresh player: " . $player->label();
+      $context['results'][] = $nid;
+    }
+  }
+
   public function refreshAllPlayers(): void {
     $token = $this->configFactory->get('renify_dupr.settings')->get('secretkey');
     if (!$token) return;
@@ -52,6 +71,9 @@ class DuprRefreshService {
         // Update Ratings
         $node->set('field_rating_doubles', is_numeric($res['ratings']['doubles']) ? $res['ratings']['doubles'] : 0);
         $node->set('field_rating_singles', is_numeric($res['ratings']['singles']) ? $res['ratings']['singles'] : 0);
+        $node->set('field_verified', (int) ($res['verifiedEmail'] ?? 0));
+        $node->set('field_location', $res['shortAddress']);
+        $node->set('field_gender', $res['gender']);
 
         // Update Image
         if (!empty($res['imageUrl'])) {

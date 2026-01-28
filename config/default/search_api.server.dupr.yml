@@ -1,0 +1,15 @@
+uuid: 0fbbe83a-77cd-4220-adab-c7198ddf71bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: dupr
+name: DUPR
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 3
+  matching: prefix
+  phrase: bigram

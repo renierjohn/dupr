@@ -162,6 +162,7 @@ final class DUPRloginConfigForm extends ConfigFormBase {
 
     $this->config('renify_dupr.settings')
       ->set('username', $form_state->getValue('username'))
+      ->set('password', $form_state->getValue('password'))
       ->set('name', $auth_data['user']['fullName'])
       ->set('dupr_id', $auth_data['user']['id'])
       ->set('secretkey', $auth_data['accessToken'])

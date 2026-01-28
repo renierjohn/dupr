@@ -1,0 +1,29 @@
+uuid: cc582900-f2a9-433f-a408-f1e96a8c53b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_team_winner
+    - node.type.matches
+    - node.type.players
+id: node.matches.field_team_winner
+field_name: field_team_winner
+entity_type: node
+bundle: matches
+label: 'Team Winner'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      players: players
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

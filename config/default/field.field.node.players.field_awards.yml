@@ -1,0 +1,26 @@
+uuid: b55f61a8-7f2f-4ae3-9ba7-5197ffdf8231
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_awards
+    - filter.format.full_html
+    - filter.format.plain_text
+    - node.type.players
+  module:
+    - text
+id: node.players.field_awards
+field_name: field_awards
+entity_type: node
+bundle: players
+label: Awards
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+    - plain_text
+field_type: text_long

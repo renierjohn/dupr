@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.players.field_age
+    - field.field.node.players.field_awards
     - field.field.node.players.field_dupr_id
     - field.field.node.players.field_gender
     - field.field.node.players.field_image
@@ -12,9 +13,11 @@ dependencies:
     - field.field.node.players.field_rating_singles
     - field.field.node.players.field_user_id
     - field.field.node.players.field_verified
+    - image.style.large
     - node.type.players
   module:
     - image
+    - text
     - user
 id: node.players.default
 targetEntityType: node
@@ -28,6 +31,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 107
+    region: content
+  field_awards:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
     region: content
   field_dupr_id:
     type: string
@@ -50,7 +60,7 @@ content:
     label: above
     settings:
       image_link: ''
-      image_style: ''
+      image_style: large
       image_loading:
         attribute: lazy
     third_party_settings: {  }
