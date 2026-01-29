@@ -74,6 +74,7 @@ class DuprRefreshService {
         $node->set('field_verified', (int) ($res['verifiedEmail'] ?? 0));
         $node->set('field_location', $res['shortAddress']);
         $node->set('field_gender', $res['gender']);
+        $node->set('field_age', $res['age']);
 
         // Update Image
         if (!empty($res['imageUrl'])) {
