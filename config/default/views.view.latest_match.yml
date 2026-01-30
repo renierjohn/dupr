@@ -414,7 +414,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 9
+          items_per_page: 20
       exposed_form:
         type: basic
         options:
@@ -486,20 +486,67 @@ display:
           value:
             matches: matches
       style:
-        type: grid
+        type: table
         options:
           grouping:
             -
               field: field_event_date
               rendered: true
               rendered_strip: false
-          columns: 3
-          automatic_width: true
-          alignment: horizontal
-          row_class_custom: ''
-          row_class_default: true
-          col_class_custom: ''
-          col_class_default: true
+          row_class: ''
+          default_row_class: true
+          columns:
+            field_event_date: field_event_date
+            field_team_winner: field_team_winner
+            field_score_a: field_score_a
+            field_score_b: field_score_b
+            field_venue: field_venue
+            view_node: view_node
+          default: '-1'
+          info:
+            field_event_date:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_team_winner:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_score_a:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_score_b:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_venue:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            view_node:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
+          class: ''
       row:
         type: fields
       query:

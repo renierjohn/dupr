@@ -28,6 +28,11 @@ type_settings:
       weight: 0
       published: true
       default_revision: true
+    unpublished:
+      label: Unpublished
+      weight: 1
+      published: false
+      default_revision: false
   transitions:
     back_for_review:
       label: 'Back for Review'
@@ -35,6 +40,12 @@ type_settings:
         - published
       to: for_review
       weight: 3
+    direct_published:
+      label: 'Direct Published'
+      from:
+        - unpublished
+      to: published
+      weight: 4
     published:
       label: 'For Published'
       from:
@@ -44,4 +55,4 @@ type_settings:
   entity_types:
     node:
       - players
-  default_moderation_state: for_review
+  default_moderation_state: published
