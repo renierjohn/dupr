@@ -1,0 +1,29 @@
+uuid: 047bbd60-e450-4320-87db-fdfc972ce17a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.latest_match
+  module:
+    - system
+    - views
+  theme:
+    - renify
+id: renify_views_block__latest_match_block_1
+theme: renify
+region: content
+weight: -2
+provider: null
+plugin: 'views_block:latest_match-block_1'
+settings:
+  id: 'views_block:latest_match-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: null
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search

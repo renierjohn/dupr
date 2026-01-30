@@ -1,0 +1,42 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * @file
+ * Functions to support theming in the Renify theme.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ */
+function renify_preprocess_html(array &$variables): void {
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page.html.twig.
+ */
+function renify_preprocess_page(array &$variables): void {
+
+}
+
+
+/**
+ * Implements template_preprocess_node().
+ */
+function renify_preprocess_node(&$variables) {
+  $node = $variables['node'];
+
+  // 1. Check if the field exists and is empty
+  if ($node->hasField('field_image') && $node->get('field_image')->isEmpty()) {
+
+    // 2. Define the path to your default image
+    // This assumes your image is at /themes/YOUR_THEME/images/default.jpg
+    $theme_path = \Drupal::service('extension.list.theme')->getPath('renify');
+    $default_image_url = '/' . $theme_path . '/images/placeholder.jpg';
+
+    // 3. Pass the URL to a new variable for the template
+    $variables['default_image_url'] = $default_image_url;
+  }
+}

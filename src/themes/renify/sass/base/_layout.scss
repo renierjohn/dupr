@@ -1,0 +1,18 @@
+@use '../variables' as var;
+
+.page-wrapper {
+  background-color: var.$background-light;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var.$spacing-md;
+}
+
+.page-title {
+  color: var.$primary-color;
+  font-size: 2.5rem;
+  margin: var.$spacing-lg 0;
+}

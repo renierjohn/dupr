@@ -1,0 +1,20 @@
+@use 'variables' as var;
+@use 'sass:color'; // Import the built-in Sass color module
+@use 'components/header';
+@use 'components/facets';
+@use 'components/tables'; // Added this
+@use 'components/views'; // Added this
+@use 'components/node'; // Added this
+@use 'components/form'; // Added this
+
+// Keep Olivero's structural classes but apply your SASS logic
+body {
+  background-color: var.$background-light;
+  font-family: 'Roboto', sans-serif; // Google's signature font
+}
+
+.site-header {
+  border-bottom: 1px solid var.$gray-200;
+  box-shadow: var.$shadow-xs;
+}
+

@@ -1,0 +1,80 @@
+@use '../variables' as var;
+
+.block-facets {
+  background: var.$white;
+  border-radius: var.$border-radius-lg;
+  box-shadow: var.$shadow-sm;
+  padding: var.$spacing-lg;
+  margin-bottom: var.$spacing-lg;
+  border: 1px solid var.$gray-200;
+
+  .block__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var.$text-dark;
+    margin-bottom: var.$spacing-md;
+    padding-bottom: var.$spacing-xs;
+    border-bottom: 2px solid var.$primary-color; // Google Blue accent
+    display: inline-block;
+  }
+}
+
+.facets-widget-checkbox, .facets-widget-links {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .facet-item {
+    display: flex;
+    align-items: center;
+    padding: var.$spacing-xs 0;
+    font-size: 0.95rem;
+
+    // The checkbox styling
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-right: var.$spacing-sm;
+      cursor: pointer;
+      accent-color: var.$primary-color; // Targets the "Google Blue"
+    }
+
+    label, a {
+      color: var.$text-color;
+      text-decoration: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      &:hover {
+        color: var.$primary-color;
+      }
+    }
+
+    // Styling the counts (e.g., "(89)")
+    .facet-item__value {
+      flex-grow: 1;
+    }
+
+    // If your view adds counts, we can style them as subtle badges
+    &::after {
+      font-size: 0.8rem;
+      color: var.$text-muted;
+      font-weight: 400;
+    }
+  }
+}
+
+// Specific styling for the Location links
+.facets-widget-links .facet-item a {
+  padding: var.$spacing-xs var.$spacing-sm;
+  border-radius: var.$border-radius-sm;
+  transition: background 0.2s;
+
+  &:hover {
+    background-color: var.$gray-100;
+  }
+}

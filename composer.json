@@ -45,6 +45,7 @@
         "drupal/facets": "^3.0",
         "drupal/field_group": "^4.0",
         "drupal/gin": "^5.0",
+        "drupal/imce": "^3.1",
         "drupal/inline_entity_form": "^3.0@RC",
         "drupal/pathauto": "^1.14",
         "drupal/rabbit_hole": "^1.1",
@@ -137,6 +138,7 @@
     },
     "require-dev": {
         "drupal/devel": "^5.5",
+        "dupr/renify": "@dev",
         "dupr/renify_auth": "@dev",
         "dupr/renify_courtmanager": "@dev",
         "dupr/renify_dupr": "@dev"

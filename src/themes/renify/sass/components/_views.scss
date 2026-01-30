@@ -1,0 +1,14 @@
+@use 'sass:color';
+@use '../variables' as var;
+
+#block-renify-views-block-latest-match-block-1 {
+
+  h2 {
+    margin: 0;
+    text-align: center;
+  }
+
+  .view-latest-match {
+    gap: 0;
+  }
+}

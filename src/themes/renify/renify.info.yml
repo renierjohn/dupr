@@ -1,0 +1,38 @@
+name: Renify
+type: theme
+base theme: olivero
+description: A flexible theme with a responsive, mobile-first layout.
+package: renify
+core_version_requirement: ^10 || ^11
+libraries:
+  - renify/global
+regions:
+  header: 'Header'
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  featured: 'Featured'
+  breadcrumb: 'Breadcrumb'
+  content: 'Content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: 'Footer'
+
+# libraries-override:
+  # olivero/global-styling: false
+  # olivero/pager: false
+  # olivero/feed: false
+  # olivero/node: false
+  # olivero/comments: false
+  # olivero/search-results: false
+  # olivero/site-header: false
+  # olivero/olivero.table: false
+
+libraries-override:
+  # We keep these true to maintain the Olivero layout/grid
+  olivero/global-styling:
+    css:
+      theme:
+        # We can disable just the "look" of buttons to use our SASS buttons
+        css/components/button.css: false

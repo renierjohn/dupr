@@ -1,0 +1,35 @@
+@use '../variables' as var;
+
+#block-renify-site-branding {
+  background: none;
+}
+
+// .site-header {
+//   background-color: var.$white;
+//   box-shadow: var.$shadow-sm;
+//   padding: var.$spacing-sm 0;
+
+//   &__inner {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//   }
+// }
+
+// .site-branding {
+//   &__name a {
+//     color: var.$dark-gray;
+//     text-decoration: none;
+//     font-weight: bold;
+//     font-size: 1.25rem;
+//   }
+//   &__logo img {
+//     // height: 40px;
+//     width: auto;
+//   }
+// }
+
+// // Mobile Toggle Icon
+// .sticky-header-toggle__icon span {
+//   background-color: var.$primary-color;
+// }

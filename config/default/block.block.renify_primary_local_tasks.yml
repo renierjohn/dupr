@@ -1,0 +1,22 @@
+uuid: 89ca591b-d53c-4f6e-9783-83fc9ef1670f
+langcode: en
+status: true
+dependencies:
+  theme:
+    - renify
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: renify_primary_local_tasks
+theme: renify
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

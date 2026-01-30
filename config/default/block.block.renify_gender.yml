@@ -1,0 +1,29 @@
+uuid: 19696f3b-86c4-4958-8290-89c7c34e1356
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.gender
+  module:
+    - facets
+    - system
+  theme:
+    - renify
+id: renify_gender
+theme: renify
+region: content
+weight: -5
+provider: null
+plugin: 'facet_block:gender'
+settings:
+  id: 'facet_block:gender'
+  label: Gender
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: renify_gender
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

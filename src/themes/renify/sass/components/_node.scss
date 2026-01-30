@@ -1,0 +1,37 @@
+@use '../variables' as var;
+@use 'sass:color'; // Import the built-in Sass color module
+
+
+.node__content {
+  border: 1px solid var.$text-muted;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.page-node-type-matches {
+  .field--name-field-event-date {
+    .field__item {
+      text-align: center;
+      time {
+        font-weight: bold;
+        font-size: 2rem;
+      }
+    }
+  }
+  .field--name-field-team-winner {
+    .field__item {
+      font-weight: 100;
+    }
+  }
+}
+
+.page-node-type-players {
+  .node-form {
+    .form-type-boolean, .form-type-textfield, .form-type-number, .form-type-managed-file, .form-type-vertical-tabs {
+      display: none;
+    }
+    .form-disabled {
+      display: block;
+    }
+  }
+}

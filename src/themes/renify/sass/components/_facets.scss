@@ -1,0 +1,107 @@
+@use 'sass:color';
+@use '../variables' as var;
+
+.block-facets {
+  background: var.$white;
+  border-radius: var.$border-radius-lg;
+  border: 1px solid var.$gray-200;
+  margin-bottom: var.$spacing-md;
+  overflow: hidden; // Ensures content doesn't bleed out during collapse
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: var.$shadow-md;
+  }
+
+  .facets-widget-checkbox {
+    ul {
+      list-style: none;
+      li {
+        margin-bottom: var.$spacing-xxs;
+      }
+    }
+  }
+
+  .facets-widget-links {
+    ul {
+      text-transform: capitalize;
+    }
+  }
+
+  .block__title {
+    margin-bottom: 0; // Reset default
+    padding: var.$spacing-md;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var.$gray-50;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: var.$gray-100;
+    }
+
+    // The "Arrow" icon
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid var.$dark-gray;
+      border-bottom: 2px solid var.$dark-gray;
+      transform: rotate(45deg); // Arrow pointing down
+      transition: transform 0.3s ease;
+      margin-right: var.$spacing-xs;
+    }
+  }
+
+  // The content container (the list of filters)
+  .block__content {
+    max-height: 0; // Initially collapsed
+    overflow: hidden;
+    padding: 0 var.$spacing-md;
+    transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+    opacity: 0;
+  }
+
+  // State: When active/open
+  // NOTE: In Drupal, you can toggle this class via JS or use :focus-within
+  &.is-open, &:focus-within {
+    .block__title {
+      background-color: color.scale(var.$primary-color, $lightness: 90%);
+      color: var.$primary-color;
+      border-bottom: 1px solid var.$gray-200;
+
+      &::after {
+        transform: rotate(-135deg); // Arrow pointing up
+        border-color: var.$primary-color;
+      }
+    }
+
+    .block__content {
+      max-height: 1000px; // Large enough for any list
+      padding: var.$spacing-md;
+      opacity: 1;
+      transition: max-height 0.4s ease-in, opacity 0.3s ease;
+    }
+  }
+}
+
+// If JS isn't working, or as a base state before JS kicks in
+.block-facets .block__content {
+  max-height: none;
+  opacity: 1;
+}
+
+// Only collapse if the 'is-collapsed' class is added via JS
+// OR use a 'js' class on the body to target JS-enabled users
+.js .block-facets:not(.is-open) {
+  .block__content {
+    max-height: 0;
+    padding: 0;
+    opacity: 0;
+  }
+}

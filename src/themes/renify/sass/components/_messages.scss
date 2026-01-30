@@ -1,0 +1,21 @@
+@use '../variables' as var;
+
+.messages--status {
+  background-color: var.$white;
+  border-left: 6px solid var.$secondary-color; // Google Green
+  box-shadow: var.$shadow-md;
+  border-radius: var.$border-radius-md;
+  padding: var.$spacing-md;
+  margin: var.$spacing-md 0;
+  display: flex;
+  align-items: center;
+
+  .messages__icon svg {
+    fill: var.$secondary-color;
+  }
+
+  .messages__content {
+    color: var.$text-dark;
+    font-weight: 500;
+  }
+}

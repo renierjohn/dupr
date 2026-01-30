@@ -1,0 +1,80 @@
+// Colors - Google inspired theme
+$primary-color: #4285F4; // Google Blue
+$secondary-color: #34A853; // Google Green
+$accent-color: #FBBC05; // Google Yellow
+$danger-color: #EA4335; // Google Red
+$warning-color: #FFC107; // Google Yellow
+$light-gray: #f8f9fa;
+$dark-gray: #5f6368;
+$white: #ffffff;
+$black: #202124;
+$light-bg: #f8f9fa;
+$success-color: #4CAF50;
+$error-color: #F44336;
+$error-light: $error-color;
+$warning-light: $light-gray;
+$warning-dark: $dark-gray;
+$primary-light: $primary-color;
+$primary-dark: $dark-gray;
+$dark: #202124;
+$text-color: #202124;
+$text-muted: #6c757d;
+$text-light: #f8f9fa;
+$text-dark: #202124;
+
+$background-light: #f8f9fa;
+$background-dark: #202124;
+
+$gray-50: #f8f9fa;
+$gray-100: #f1f3f5;
+$gray-200: #e5e7eb;
+$gray-300: #d1d5db;
+$gray-400: #9ca3af;
+$gray-500: #6b7280;
+$gray-600: #6c757d;
+$gray-700: #5f6368;
+$gray-800: #495057;
+$gray-900: #343a40;
+
+$pink-500: #FF0066;
+$orange-500: #FF6600;
+$teal-500: #0066FF;
+
+// Spacing
+$spacing-xxs: 2px;
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 48px;
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
+
+$border-color: #e5e7eb;
+
+// Shadows
+$shadow-xs: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+$shadow-sm: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+$shadow-md: 0 1px 3px 0 rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+$shadow-lg: 0 2px 6px 2px rgba(60, 64, 67, 0.15), 0 1px 2px 0 rgba(60, 64, 67, 0.3);
+
+// Typography
+$font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-md: 1rem; // 16px
+$font-size-lg: 1.25rem; // 20px
+$font-size-xl: 1.5rem; // 24px
+$font-size-xxl: 2rem; // 32px
+
+$font-size-base: $font-size-md;
+
+// Breakpoints
+$breakpoint-sm: 600px;
+$breakpoint-md: 960px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1920px;

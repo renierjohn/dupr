@@ -1,0 +1,11 @@
+# Main theme library.
+global:
+  js:
+    js/renify.js: {}
+  dependencies:
+    - core/once
+    - core/drupal
+    - core/jquery
+  css:
+    theme:
+      css/global.css: {} # This is where your compiled SASS will live

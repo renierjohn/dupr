@@ -1,0 +1,29 @@
+uuid: 4c8f4108-dc66-43ea-ab40-b19a6ef02165
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.location
+  module:
+    - facets
+    - system
+  theme:
+    - renify
+id: renify_location
+theme: renify
+region: content
+weight: -4
+provider: null
+plugin: 'facet_block:location'
+settings:
+  id: 'facet_block:location'
+  label: Location
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: renify_location
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
