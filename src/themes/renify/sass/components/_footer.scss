@@ -1,0 +1,7 @@
+@use 'sass:color';
+@use '../variables' as var;
+
+.site-footer {
+  background: #2c3e50;
+  border-inline-start: none;
+}

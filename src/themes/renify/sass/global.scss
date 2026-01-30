@@ -1,6 +1,7 @@
 @use 'variables' as var;
 @use 'sass:color'; // Import the built-in Sass color module
 @use 'components/header';
+@use 'components/footer';
 @use 'components/facets';
 @use 'components/tables'; // Added this
 @use 'components/views'; // Added this
