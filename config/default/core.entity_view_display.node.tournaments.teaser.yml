@@ -1,0 +1,38 @@
+uuid: 742085a4-a51b-4fa0-a461-a94c0695d6a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.tournaments.body
+    - field.field.node.tournaments.field_category
+    - field.field.node.tournaments.field_event_date
+    - field.field.node.tournaments.field_image
+    - node.type.tournaments
+  module:
+    - text
+    - user
+id: node.tournaments.teaser
+targetEntityType: node
+bundle: tournaments
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  addtoany: true
+  field_category: true
+  field_event_date: true
+  field_image: true
+  search_api_excerpt: true

@@ -11,7 +11,8 @@
 // Keep Olivero's structural classes but apply your SASS logic
 body {
   background-color: var.$background-light;
-  font-family: 'Roboto', sans-serif; // Google's signature font
+  background-image: none !important;
+  font-family: var.$font-family !important;
 }
 
 .site-header {

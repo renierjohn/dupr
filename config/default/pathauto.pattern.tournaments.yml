@@ -1,0 +1,22 @@
+uuid: 510ff2f3-f816-4246-924d-c73ffcb2ab41
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: tournaments
+label: Tournaments
+type: 'canonical_entities:node'
+pattern: '/tournaments/[node:title]'
+selection_criteria:
+  5bc96186-faa9-4d69-86ac-88f140f8dbd3:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 5bc96186-faa9-4d69-86ac-88f140f8dbd3
+    context_mapping:
+      node: node
+    bundles:
+      tournaments: tournaments
+selection_logic: and
+weight: -5
+relationships: {  }

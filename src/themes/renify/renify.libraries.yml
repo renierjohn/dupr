@@ -9,3 +9,13 @@ global:
   css:
     theme:
       css/global.css: {} # This is where your compiled SASS will live
+
+fontawesome-cdn:
+  remote: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1
+  license:
+    name: MIT
+    url: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/LICENSE.txt
+    gpl-compatible: true
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css: { type: external, minified: true }

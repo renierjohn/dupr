@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.players
+    - node.type.tournaments
     - workflows.workflow.editorial
   module:
     - content_moderation
@@ -13,8 +14,11 @@ label: Moderator
 weight: 5
 is_admin: false
 permissions:
+  - 'create tournaments content'
+  - 'delete own tournaments content'
   - 'edit any players content'
   - 'edit own players content'
+  - 'edit own tournaments content'
   - 'use editorial transition back_for_review'
   - 'use editorial transition published'
   - 'view any unpublished content'

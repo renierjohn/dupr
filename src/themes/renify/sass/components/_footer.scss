@@ -1,7 +1,10 @@
 @use 'sass:color';
 @use '../variables' as var;
 
-.site-footer {
-  background: #2c3e50;
-  border-inline-start: none;
+footer {
+  &.site-footer {
+    border-inline-start: solid var(--content-left) var(--color--gray-100) !important;
+    background: #2c3e50;
+  }
 }
+

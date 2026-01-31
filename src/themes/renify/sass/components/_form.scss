@@ -1,8 +1,28 @@
+@use '../variables' as var;
+
 #views-exposed-form-players-search-api-page-1 {
   div.form-type-textfield {
+
+    width: 100%;
+
     label {
       display: none;
     }
-    width: 100%;
+
+    input {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid var.$primary-color;
+      margin-bottom: 16px;
+      transition: box-shadow 0.3s ease;
+    }
+  }
+  div.form-actions {
+    input {
+      background: #ffffff;
+      border: 1px solid var.$primary-color;
+      margin-bottom: 16px;
+      transition: box-shadow 0.3s ease;
+    }
   }
 }

@@ -1,17 +1,19 @@
-uuid: 6e40270b-03c8-4cc8-8da4-765351725e28
+uuid: 2b2bcda2-c494-4c70-9346-7ab1969e6d2e
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_event_date
-field_name: field_event_date
+    - taxonomy
+id: node.field_category
+field_name: field_category
 entity_type: node
-type: timestamp
-settings: {  }
+type: entity_reference
+settings:
+  target_type: taxonomy_term
 module: core
 locked: false
-cardinality: 2
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

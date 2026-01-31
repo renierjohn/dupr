@@ -50,4 +50,78 @@
     width: 40px;
     height: 40px;
   }
+
+  .field--name-field-rating-singles {
+    margin: 0;
+    .field__label {
+      display: none;
+    }
+    .field__item {
+      &::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        content: "\f007";
+        margin-right: 0.5rem;
+        color: var.$primary-color;
+      }
+    }
+  }
+  .field--name-field-rating-doubles {
+    margin: 0;
+    .field__label {
+      display: none;
+    }
+    .field__item {
+      &::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        content: "\f500";
+        margin-right: 0.5rem;
+        color: var.$primary-color;
+      }
+    }
+  }
+
+  .views-field-field-rating-doubles {
+    &::before {
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      content: "\f500";
+      margin-right: 0.5rem;
+      color: var.$primary-color;
+    }
+  }
+
+  .views-field-field-rating-singles {
+    &::before {
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      content: "\f007";
+      margin-right: 0.5rem;
+      color: var.$primary-color;
+    }
+  }
+
+  .field--name-field-location {
+    .field__label {
+      display: none;
+    }
+    .field__item {
+      &::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        content: "\f3c5"; /* Unicode for location-dot */
+        color: #e74c3c; /* Red pin color */
+        margin-right: 2px;
+      }
+    }
+  }
+  // Latest match
+  td.views-field-field-venue::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f3c5"; /* Unicode for location-dot */
+    color: #e74c3c; /* Red pin color */
+    margin-right: 2px;
+  }
 }

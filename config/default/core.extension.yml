@@ -69,7 +69,6 @@ module:
 theme:
   olivero: 0
   claro: 0
-  gin: 0
   stark: 0
   renify: 0
 profile: standard

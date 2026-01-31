@@ -1,4 +1,4 @@
-uuid: 39ad9a8a-e092-4ba9-b57c-d6da5ebaadb8
+uuid: 93ef17e0-cf54-4456-bfe2-235f829e2b3e
 langcode: en
 status: true
 dependencies:
@@ -9,10 +9,10 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: 'Matches DUPR'
-type: matches
+name: Tournaments
+type: tournaments
 description: null
 help: null
 new_revision: false
 preview_mode: 1
-display_submitted: false
+display_submitted: true

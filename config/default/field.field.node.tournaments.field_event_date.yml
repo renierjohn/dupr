@@ -1,0 +1,23 @@
+uuid: 28b8d80b-4fc9-4de0-9b93-76b5734a0781
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_date
+    - node.type.tournaments
+id: node.tournaments.field_event_date
+field_name: field_event_date
+entity_type: node
+bundle: tournaments
+label: Date
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1769841281
+  -
+    value: 1769841281
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

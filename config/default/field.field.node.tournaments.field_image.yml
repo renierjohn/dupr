@@ -1,0 +1,38 @@
+uuid: 2810bc59-e937-4be7-830c-701fc5134e5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image
+    - node.type.tournaments
+  module:
+    - image
+id: node.tournaments.field_image
+field_name: field_image
+entity_type: node
+bundle: tournaments
+label: 'Cover Photo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: tournament
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: 2mb
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

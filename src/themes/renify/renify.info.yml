@@ -6,6 +6,7 @@ package: renify
 core_version_requirement: ^10 || ^11
 libraries:
   - renify/global
+  - renify/fontawesome-cdn
 regions:
   header: 'Header'
   primary_menu: 'Primary menu'
@@ -34,5 +35,6 @@ libraries-override:
   olivero/global-styling:
     css:
       theme:
-        # We can disable just the "look" of buttons to use our SASS buttons
+        css/base/fonts.css: false
+        css/base/base.css: false
         css/components/button.css: false

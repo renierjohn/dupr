@@ -9,6 +9,9 @@
 }
 
 .page-node-type-matches {
+  .field {
+    margin-block-end: 1rem;
+  }
   .field--name-field-event-date {
     .field__item {
       text-align: center;
@@ -23,6 +26,29 @@
       font-weight: 100;
     }
   }
+  .field--name-field-verified {
+    .field__item {
+      &::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        content: "\f058"; /* Unicode for circle-check */
+        color: #1DA1F2;
+        margin-right: 0.5rem;
+        font-size: 0.9em;
+      }
+    }
+  }
+  .field--name-field-location {
+    .field__item {
+      &::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        content: "\f3c5"; /* Unicode for location-dot */
+        color: #e74c3c; /* Red pin color */
+        margin-right: 2px;
+      }
+    }
+  }
 }
 
 .page-node-type-players {
@@ -32,6 +58,54 @@
     }
     .form-disabled {
       display: block;
+    }
+  }
+  .field {
+    margin-block-end: 1rem;
+  }
+  .field--name-field-verified {
+    .field__item {
+      &::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        content: "\f058"; /* Unicode for circle-check */
+        color: #1DA1F2;
+        margin-left: 4px;
+        font-size: 0.9em;
+      }
+    }
+  }
+  .field--name-field-rating-doubles {
+    .field__item {
+      &::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        content: "\f500";
+        margin-right: 0.5rem;
+        color: var.$primary-color;
+      }
+    }
+  }
+  .field--name-field-rating-singles {
+    .field__item {
+      &::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        content: "\f007";
+        margin-right: 0.5rem;
+        color: var.$primary-color;
+      }
+    }
+  }
+  .field--name-field-location {
+    .field__item {
+      &::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        content: "\f3c5"; /* Unicode for location-dot */
+        color: #e74c3c; /* Red pin color */
+        margin-right: 2px;
+      }
     }
   }
 }

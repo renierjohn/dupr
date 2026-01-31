@@ -1,0 +1,74 @@
+uuid: ad3fcb1d-a9b8-43f9-b394-16a5b3954da4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.tournaments.body
+    - field.field.node.tournaments.field_category
+    - field.field.node.tournaments.field_event_date
+    - field.field.node.tournaments.field_image
+    - image.style.large
+    - node.type.tournaments
+  module:
+    - image
+    - text
+    - user
+id: node.tournaments.default
+targetEntityType: node
+bundle: tournaments
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  field_category:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_event_date:
+    type: timestamp
+    label: visually_hidden
+    settings:
+      date_format: olivero_medium
+      custom_date_format: ''
+      timezone: ''
+      tooltip:
+        date_format: long
+        custom_date_format: ''
+      time_diff:
+        enabled: false
+        future_format: '@interval hence'
+        past_format: '@interval ago'
+        granularity: 2
+        refresh: 60
+        description: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  addtoany: true
+  search_api_excerpt: true

@@ -1,0 +1,5 @@
+name: 'Renify Tournament'
+type: module
+description: 'Custom module for handling tournaments'
+package: renify
+core_version_requirement: ^10 || ^11

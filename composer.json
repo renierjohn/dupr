@@ -33,7 +33,6 @@
         "cweagans/composer-patches": "~1.7.0",
         "drupal/addtoany": "^2.0",
         "drupal/admin_toolbar": "^3.6",
-        "drupal/bootstrap_barrio": "^5.5",
         "drupal/config_ignore": "^3.3",
         "drupal/config_split": "^2.0",
         "drupal/core-composer-scaffold": "^11",
@@ -44,7 +43,6 @@
         "drupal/disable_login": "^1.1",
         "drupal/facets": "^3.0",
         "drupal/field_group": "^4.0",
-        "drupal/gin": "^5.0",
         "drupal/imce": "^3.1",
         "drupal/inline_entity_form": "^3.0@RC",
         "drupal/pathauto": "^1.14",
@@ -141,6 +139,7 @@
         "dupr/renify": "@dev",
         "dupr/renify_auth": "@dev",
         "dupr/renify_courtmanager": "@dev",
-        "dupr/renify_dupr": "@dev"
+        "dupr/renify_dupr": "@dev",
+        "dupr/renify_tournament": "@dev"
     }
 }
