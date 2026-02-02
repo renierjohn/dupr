@@ -90,7 +90,12 @@ class DUPRmatchService {
 
       if (($data['status'] ?? '') === 'SUCCESS' && !empty($data['result']['hits'])) {
         foreach ($data['result']['hits'] as $matchData) {
-          $this->processMatch($matchData);
+          $today = new \DateTime('today');
+          $eventDate = new \DateTime($matchData['eventDate']);
+          // Store only todays maytch.
+          if ($eventDate->format('Y-m-d') === $today->format('Y-m-d')) {
+            $this->processMatch($matchData);
+          }
         }
       }
     } catch (\Exception $e) {
