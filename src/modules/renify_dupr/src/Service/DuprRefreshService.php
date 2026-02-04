@@ -71,10 +71,12 @@ class DuprRefreshService {
         // Update Ratings
         $node->set('field_rating_doubles', is_numeric($res['ratings']['doubles']) ? $res['ratings']['doubles'] : 0);
         $node->set('field_rating_singles', is_numeric($res['ratings']['singles']) ? $res['ratings']['singles'] : 0);
+        $node->set('field_rs_doubles', is_numeric($res['ratings']['doublesReliabilityScore']) ? $res['ratings']['doublesReliabilityScore'] : 0);
+        $node->set('field_rs_singles', is_numeric($res['ratings']['singlesReliabilityScore']) ? $res['ratings']['singlesReliabilityScore'] : 0);
         $node->set('field_verified', (int) ($res['verifiedEmail'] ?? 0));
-        $node->set('field_location', $res['shortAddress']);
+        $node->set('field_location', !empty($res['shortAddress']) ? $res['shortAddress'] : '');
         $node->set('field_gender', $res['gender']);
-        $node->set('field_age', $res['age']);
+        $node->set('field_age', !empty($res['age']) ? $res['age'] : 0);
 
         // Update Image
         if (!empty($res['imageUrl'])) {

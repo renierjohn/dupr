@@ -115,6 +115,8 @@ class DuprApiClient {
     $node->set('field_verified', (int) ($p['verifiedEmail'] ?? 0));
     $node->set('field_rating_doubles', $clean_rating($p['ratings']['doubles'] ?? 0));
     $node->set('field_rating_singles', $clean_rating($p['ratings']['singles'] ?? 0));
+    $node->set('field_rs_doubles', $clean_rating($p['ratings']['doublesReliabilityScore'] ?? 0));
+    $node->set('field_rs_singles', $clean_rating($p['ratings']['singlesReliabilityScore'] ?? 0));
     $node->setPublished(TRUE);
 
     $node->save();

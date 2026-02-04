@@ -1,0 +1,4 @@
+import tournament pairings:
+  title: 'Import Tournament Pairings'
+  description: 'Allows users to upload CSV files to generate pairings on tournament nodes.'
+  restrict access: true

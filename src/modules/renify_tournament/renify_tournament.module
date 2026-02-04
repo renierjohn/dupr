@@ -2,5 +2,33 @@
 
 /**
  * @file
- * Primary module hooks for Renify Tournament module.
+ * Primary module hooks for renify_tournament module.
  */
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function renify_tournament_entity_extra_field_info() {
+  $extra['node']['tournaments']['display']['pairing_csv_form'] = [
+    'label' => t('Pairing CSV Generator Form'),
+    'description' => t('Displays the CSV upload form for pairings.'),
+    'weight' => 100,
+    'visible' => TRUE,
+  ];
+  return $extra;
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function renify_tournament_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+  if ($entity->bundle() === 'tournaments' && $display->getComponent('pairing_csv_form')) {
+    // Check if the current user has the specific permission
+    if (\Drupal::currentUser()->hasPermission('import tournament pairings')) {
+      $build['pairing_csv_form'] = \Drupal::formBuilder()->getForm(
+        'Drupal\renify_tournament\Form\PairingCsvUploadForm',
+        $entity->id()
+      );
+    }
+  }
+}

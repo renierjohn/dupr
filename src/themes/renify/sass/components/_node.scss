@@ -108,4 +108,12 @@
       }
     }
   }
+  .field--name-field-rs-singles, .field--name-field-rs-doubles {
+    float: left;
+    margin-right: 0.5rem;
+    border-bottom: 1px solid green;
+    border-radius: 50%;
+    font-size: .7rem;
+    margin-bottom: 0;
+  }
 }

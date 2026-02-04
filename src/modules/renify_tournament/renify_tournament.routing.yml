@@ -1,0 +1,7 @@
+renify_tournament.sample_csv:
+  path: '/tournaments/sample-csv'
+  defaults:
+    _controller: '\Drupal\renify_tournament\Controller\CsvTemplateController::download'
+    _title: 'Download Sample CSV'
+  requirements:
+    _permission: 'access content' # Or a more specific permission
