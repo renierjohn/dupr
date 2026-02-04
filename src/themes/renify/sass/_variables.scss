@@ -76,5 +76,12 @@ $font-size-base: $font-size-md;
 // Breakpoints
 $breakpoint-sm: 600px;
 $breakpoint-md: 960px;
-$breakpoint-lg: 1280px;
+$breakpoint-lg: 1200px;
 $breakpoint-xl: 1920px;
+
+$breakpoints: (
+  "mobile": 600px,
+  "tablet": 960px,
+  "desktop": 1200px,
+  "tv": 1920px
+);

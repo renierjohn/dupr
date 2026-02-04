@@ -2,7 +2,6 @@
 @use '../variables' as var;
 
 #block-renify-views-block-latest-match-block-1 {
-
   h2 {
     margin: 0;
     text-align: center;
@@ -10,5 +9,104 @@
 
   .view-latest-match {
     gap: 0;
+    table {
+      tr {
+        display: block;
+        margin-top: 3rem;
+        @media (min-width: map-get(var.$breakpoints, 'mobile')) {
+          display: table-row;
+        }
+        td {
+
+          border-block-end: none;
+
+          &:last-child {
+            float: left;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+
+            @media (min-width: map-get(var.$breakpoints, 'mobile')) {
+              float: none;
+              width: inherit;
+              border-block-end: inherit;
+            }
+
+            a {
+              margin: 0;
+              padding: 0;
+              width: 100%;
+              text-align: center;
+              display: block;
+              height: 2rem;
+              line-height: 1.5rem;
+
+              @media (min-width: map-get(var.$breakpoints, 'mobile')) {
+                width: inherit;
+                height: inherit;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#block-renify-content {
+  .view-players-search-api {
+    gap: 0.1rem;
+    table {
+      tr {
+        display: inline;
+        margin-top: 3rem;
+
+        @media (min-width: map-get(var.$breakpoints, 'mobile')) {
+          display: table-row;
+        }
+
+        td {
+          &.views-field-field-image {
+            width: 100px;
+            @media (min-width: map-get(var.$breakpoints, 'mobile')) {
+              width: inherit;
+            }
+          }
+
+          &.views-field-field-image, &.views-field-field-dupr-id {
+            border-block-end: none;
+          }
+
+          &:last-child {
+            float: left;
+            width: 100%;
+            margin: 0;
+            // padding: 0;
+            margin-bottom: 1rem;
+
+            @media (min-width: map-get(var.$breakpoints, 'mobile')) {
+              width: inherit;
+              margin: inherit;
+              float: none;
+              border-block-end: none;
+            }
+
+            a {
+              margin: 0;
+              padding: 0;
+              width: 100%;
+              text-align: center;
+              display: block;
+              height: 2rem;
+              line-height: 1.5rem;
+
+              @media (min-width: map-get(var.$breakpoints, 'mobile')) {
+                width: inherit;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

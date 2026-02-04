@@ -12,11 +12,14 @@
 body {
   background-color: var.$background-light;
   background-image: none !important;
-  font-family: var.$font-family !important;
-}
+  // font-family: var.$font-family !important;
 
-.site-header {
-  border-bottom: 1px solid var.$gray-200;
-  box-shadow: var.$shadow-xs;
+  .main-content__container {
+    padding-block-start: var.$spacing-lg;
+  }
+  div, span, a, button, ul, li , td, tr {
+     // font-family: var.$font-family !important;
+     // font-weight: 100;
+  }
 }
 

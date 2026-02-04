@@ -38,76 +38,79 @@
       border-right: 1px solid var.$gray-100;
       border-radius: 0 var.$border-radius-md var.$border-radius-md 0;
     }
-  }
 
-  .views-field-field-image {
-    width: 20%;
-    height: 40px;
-  }
-
-  img {
-    border-radius: 50%; // Circular Google-style profile photos
-    border: 2px solid var.$gray-200;
-    width: 40px;
-    height: 40px;
-  }
-
-  .field--name-field-rating-singles {
-    margin: 0;
-    .field__label {
-      display: none;
-    }
-    .field__item {
-      &::before {
-        font-family: "Font Awesome 6 Free";
-        font-weight: 900;
-        content: "\f007";
-        margin-right: 0.5rem;
-        color: var.$primary-color;
+    .field {
+      margin: 0;
+      &__label {
+        display: none;
       }
     }
-  }
-  .field--name-field-rating-doubles {
-    margin: 0;
-    .field__label {
-      display: none;
-    }
-    .field__item {
-      &::before {
-        font-family: "Font Awesome 6 Free";
-        font-weight: 900;
-        content: "\f500";
-        margin-right: 0.5rem;
-        color: var.$primary-color;
+
+    .field--name-field-dupr-id {
+      .field__item {
+        background-color: var.$primary-color;
+        display: inline;
+        color: white;
+        padding: 0.2rem;
+        border-radius: 1rem;
+        font-size: var.$font-size-sm;
+
+        @media (min-width: map-get(var.$breakpoints, 'mobile')) {
+          font-size: var.$font-size-md;
+        }
       }
     }
-  }
 
-  .views-field-field-rating-doubles {
-    &::before {
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      content: "\f500";
-      margin-right: 0.5rem;
-      color: var.$primary-color;
+    .field--name-field-rating-singles {
+      .field__item {
+        &::before {
+          font-family: "Font Awesome 6 Free";
+          font-weight: 900;
+          content: "\f007";
+          margin-right: 0.5rem;
+          color: var.$primary-color;
+        }
+      }
     }
-  }
 
-  .views-field-field-rating-singles {
-    &::before {
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      content: "\f007";
-      margin-right: 0.5rem;
-      color: var.$primary-color;
+   .field--name-field-rating-doubles {
+      .field__item {
+        &::before {
+          font-family: "Font Awesome 6 Free";
+          font-weight: 900;
+          content: "\f500";
+          margin-right: 0.5rem;
+          color: var.$primary-color;
+        }
+      }
     }
-  }
 
-  .field--name-field-location {
-    .field__label {
-      display: none;
+    .field--name-field-location {
+      .field__item {
+        &::before {
+          font-family: "Font Awesome 6 Free";
+          font-weight: 900;
+          content: "\f3c5"; /* Unicode for location-dot */
+          color: #e74c3c; /* Red pin color */
+          margin-right: 2px;
+        }
+      }
     }
-    .field__item {
+
+    &.views-field-field-dupr-id {
+      .ratings {
+        display: flex;
+        .field--name-field-rs-doubles, .field--name-field-rs-singles {
+          margin-right: 0.5rem;
+          border-bottom: 1px solid green;
+          border-radius: 50%;
+          font-size: .7rem;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &.views-field-field-venue {
       &::before {
         font-family: "Font Awesome 6 Free";
         font-weight: 900;
@@ -116,21 +119,36 @@
         margin-right: 2px;
       }
     }
-  }
 
-  // Latest match
-  td.views-field-field-venue::before {
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    content: "\f3c5"; /* Unicode for location-dot */
-    color: #e74c3c; /* Red pin color */
-    margin-right: 2px;
-  }
-  td[headers="view-title-table-column"] a {
-    // border: var.$primary-color 1px solid;
-    // padding: 0.2rem;
-    // border-radius: 7px;
-    // background-color: darken(var.$primary-color, 40%);
-    // color: white;
+    &.views-field-field-rating-singles {
+      &::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        content: "\f007";
+        margin-right: 0.5rem;
+        color: var.$primary-color;
+      }
+    }
+
+    &.views-field-field-rating-doubles {
+      &::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        content: "\f500";
+        margin-right: 0.5rem;
+        color: var.$primary-color;
+      }
+    }
+    .views-field-field-image {
+      width: 20%;
+      height: 40px;
+    }
+
+    img {
+      border-radius: 50%; // Circular Google-style profile photos
+      border: 2px solid var.$gray-200;
+      width: 40px;
+      height: 40px;
+    }
   }
 }

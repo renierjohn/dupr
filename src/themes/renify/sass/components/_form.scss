@@ -1,9 +1,21 @@
 @use '../variables' as var;
 
-#views-exposed-form-players-search-api-page-1 {
+form#views-exposed-form-players-search-api-page-1 {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: map-get(var.$breakpoints, 'mobile')) {
+    flex-direction: row;
+  }
   div.form-type-textfield {
 
     width: 100%;
+    margin-top: 0;
+    margin-right: var.$spacing-xs;
+
+    @media (min-width: map-get(var.$breakpoints, 'mobile')) {
+      width: 80%;
+    }
 
     label {
       display: none;
@@ -15,14 +27,24 @@
       border: 1px solid var.$primary-color;
       margin-bottom: 16px;
       transition: box-shadow 0.3s ease;
+      width: 100%;
     }
   }
   div.form-actions {
+    width: 100%;
+    margin-top: 0;
+
+    @media (min-width: map-get(var.$breakpoints, 'mobile')) {
+      width: 20%;
+    }
+
     input {
       background: #ffffff;
       border: 1px solid var.$primary-color;
       margin-bottom: 16px;
       transition: box-shadow 0.3s ease;
+      margin-right: 0;
+      width: 100%;
     }
   }
 }

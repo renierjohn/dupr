@@ -3,9 +3,17 @@
 
 
 .node__content {
-  border: 1px solid var.$text-muted;
+  .page-node-type-players & {
+    border: 1px solid var.$text-muted;
+  }
   padding: 1rem;
   border-radius: 1rem;
+}
+
+.path-frontpage {
+  .grid-full {
+    display: block;
+  }
 }
 
 .page-node-type-matches {
