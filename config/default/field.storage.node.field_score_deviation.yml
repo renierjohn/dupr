@@ -1,0 +1,20 @@
+uuid: 926fc998-f79c-42b5-9ee2-14da54baf2e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_score_deviation
+field_name: field_score_deviation
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 4
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

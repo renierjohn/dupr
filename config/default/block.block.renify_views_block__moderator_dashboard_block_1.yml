@@ -1,0 +1,33 @@
+uuid: 5c2b9c11-3533-485b-abf6-4c64dc88935c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.moderator_dashboard
+  module:
+    - node
+    - views
+  theme:
+    - renify
+id: renify_views_block__moderator_dashboard_block_1
+theme: renify
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:moderator_dashboard-block_1'
+settings:
+  id: 'views_block:moderator_dashboard-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: null
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      tournaments: tournaments

@@ -7,12 +7,14 @@ dependencies:
     - field.field.node.tournaments.field_category
     - field.field.node.tournaments.field_event_date
     - field.field.node.tournaments.field_image
+    - field.field.node.tournaments.field_registered_players
     - image.style.thumbnail
     - node.type.tournaments
   module:
     - content_moderation
     - field_group
     - image
+    - inline_entity_form
     - path
     - text
 third_party_settings:
@@ -21,6 +23,7 @@ third_party_settings:
       children:
         - group_category_event
         - group_details_tab
+        - group_players
         - group_details
       label: Group
       region: content
@@ -83,6 +86,36 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
+    group_players:
+      children: {  }
+      label: Players
+      region: content
+      parent_name: group_category
+      weight: 23
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_item_players:
+      children:
+        - field_registered_players
+      label: Upload
+      region: content
+      parent_name: ''
+      weight: 7
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        description: 'Upload xls or csv file from registered players.'
+        required_fields: true
 id: node.tournaments.default
 targetEntityType: node
 bundle: tournaments
@@ -123,6 +156,24 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_registered_players:
+    type: inline_entity_form_complex
+    weight: 8
+    region: content
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: true
+      collapsed: false
+      revision: false
+      removed_reference: optional
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default

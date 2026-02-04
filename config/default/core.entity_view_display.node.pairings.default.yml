@@ -1,0 +1,86 @@
+uuid: 0232e3aa-7cbf-405d-b1df-3bb337d001f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.pairings.field_bracket
+    - field.field.node.pairings.field_category
+    - field.field.node.pairings.field_players
+    - field.field.node.pairings.field_remarks
+    - field.field.node.pairings.field_score_deviation
+    - field.field.node.pairings.field_status
+    - field.field.node.pairings.field_tournament_joined
+    - node.type.pairings
+  module:
+    - user
+id: node.pairings.default
+targetEntityType: node
+bundle: pairings
+mode: default
+content:
+  field_bracket:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_category:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_players:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_remarks:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_score_deviation:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_status:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_tournament_joined:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  addtoany: true
+  search_api_excerpt: true

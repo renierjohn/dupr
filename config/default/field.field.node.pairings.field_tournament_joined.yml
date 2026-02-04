@@ -1,0 +1,29 @@
+uuid: a2a3c32a-861c-4c9f-a858-6ca870b595b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tournament_joined
+    - node.type.pairings
+    - node.type.tournaments
+id: node.pairings.field_tournament_joined
+field_name: field_tournament_joined
+entity_type: node
+bundle: pairings
+label: 'Tournament Joined'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      tournaments: tournaments
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

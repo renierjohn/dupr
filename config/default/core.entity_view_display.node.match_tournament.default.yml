@@ -1,0 +1,50 @@
+uuid: 2b706965-ed33-4cfd-89e5-a4d504d31d50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.match_tournament.field_match_pairings
+    - field.field.node.match_tournament.field_match_score_a
+    - field.field.node.match_tournament.field_match_score_b
+    - node.type.match_tournament
+  module:
+    - user
+id: node.match_tournament.default
+targetEntityType: node
+bundle: match_tournament
+mode: default
+content:
+  field_match_pairings:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_match_score_a:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_match_score_b:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  addtoany: true
+  search_api_excerpt: true

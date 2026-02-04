@@ -9,13 +9,18 @@ dependencies:
     - field.field.node.players.field_gender
     - field.field.node.players.field_image
     - field.field.node.players.field_location
+    - field.field.node.players.field_player_stats
     - field.field.node.players.field_rating_doubles
     - field.field.node.players.field_rating_singles
+    - field.field.node.players.field_rs_doubles
+    - field.field.node.players.field_rs_singles
     - field.field.node.players.field_user_id
     - field.field.node.players.field_verified
     - image.style.thumbnail
     - node.type.players
+    - workflows.workflow.editorial
   module:
+    - content_moderation
     - image
     - path
     - text
@@ -32,7 +37,7 @@ content:
     third_party_settings: {  }
   field_age:
     type: string_textfield
-    weight: 12
+    weight: 14
     region: content
     settings:
       size: 60
@@ -40,7 +45,7 @@ content:
     third_party_settings: {  }
   field_awards:
     type: text_textarea
-    weight: 14
+    weight: 17
     region: content
     settings:
       rows: 5
@@ -56,7 +61,7 @@ content:
     third_party_settings: {  }
   field_gender:
     type: string_textfield
-    weight: 11
+    weight: 13
     region: content
     settings:
       size: 60
@@ -64,7 +69,7 @@ content:
     third_party_settings: {  }
   field_image:
     type: image_image
-    weight: 13
+    weight: 15
     region: content
     settings:
       progress_indicator: throbber
@@ -72,15 +77,21 @@ content:
     third_party_settings: {  }
   field_location:
     type: string_textfield
-    weight: 10
+    weight: 12
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_player_stats:
+    type: options_buttons
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_rating_doubles:
     type: number
-    weight: 9
+    weight: 10
     region: content
     settings:
       placeholder: ''
@@ -88,6 +99,20 @@ content:
   field_rating_singles:
     type: number
     weight: 8
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_rs_doubles:
+    type: number
+    weight: 11
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_rs_singles:
+    type: number
+    weight: 9
     region: content
     settings:
       placeholder: ''
@@ -106,6 +131,12 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 18
+    region: content
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path

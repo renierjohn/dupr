@@ -47,6 +47,7 @@ module:
   path_alias: 0
   renify_auth: 0
   renify_dupr: 0
+  renify_tournament: 0
   rest: 0
   rest_api_access_token: 0
   search_api: 0

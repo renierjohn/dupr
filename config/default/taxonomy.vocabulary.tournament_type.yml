@@ -1,9 +1,9 @@
-uuid: e96a0067-da83-4bfd-9502-1da3037e3b05
+uuid: 630e41c5-6089-45f3-b8a6-d5db82010604
 langcode: en
 status: true
 dependencies: {  }
-name: 'Level Category'
-vid: category
+name: 'Tournament Status'
+vid: tournament_type
 description: null
 weight: 0
 new_revision: false

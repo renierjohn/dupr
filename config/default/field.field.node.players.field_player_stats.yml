@@ -1,0 +1,21 @@
+uuid: ecf91487-f5ca-4a5e-9950-78dd498f11de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_player_stats
+    - node.type.players
+  module:
+    - options
+id: node.players.field_player_stats
+field_name: field_player_stats
+entity_type: node
+bundle: players
+label: 'Player Stats'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

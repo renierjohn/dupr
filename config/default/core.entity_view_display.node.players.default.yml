@@ -9,14 +9,18 @@ dependencies:
     - field.field.node.players.field_gender
     - field.field.node.players.field_image
     - field.field.node.players.field_location
+    - field.field.node.players.field_player_stats
     - field.field.node.players.field_rating_doubles
     - field.field.node.players.field_rating_singles
+    - field.field.node.players.field_rs_doubles
+    - field.field.node.players.field_rs_singles
     - field.field.node.players.field_user_id
     - field.field.node.players.field_verified
     - image.style.large
     - node.type.players
   module:
     - image
+    - options
     - text
     - user
 id: node.players.default
@@ -30,14 +34,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 8
+    weight: 11
     region: content
   field_awards:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 12
     region: content
   field_dupr_id:
     type: string
@@ -53,7 +57,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 7
+    weight: 10
     region: content
   field_image:
     type: image
@@ -72,18 +76,25 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 6
+    weight: 9
+    region: content
+  field_player_stats:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_rating_doubles:
     type: number_decimal
     label: inline
     settings:
-      thousand_separator: ''
+      thousand_separator: .
       decimal_separator: .
       scale: 2
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 5
+    weight: 8
     region: content
   field_rating_singles:
     type: number_decimal
@@ -94,7 +105,29 @@ content:
       scale: 2
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 4
+    weight: 6
+    region: content
+  field_rs_doubles:
+    type: number_decimal
+    label: hidden
+    settings:
+      thousand_separator: .
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_rs_singles:
+    type: number_decimal
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_verified:
     type: boolean
@@ -104,7 +137,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   links:
     settings: {  }

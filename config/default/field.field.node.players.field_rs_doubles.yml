@@ -1,0 +1,25 @@
+uuid: d43804de-4223-40a0-a814-e3f1ef96bfda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rs_doubles
+    - node.type.players
+id: node.players.field_rs_doubles
+field_name: field_rs_doubles
+entity_type: node
+bundle: players
+label: 'Reliability Score Doubles'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0.0
+default_value_callback: ''
+settings:
+  min: 0.0
+  max: 100.0
+  prefix: ''
+  suffix: '%'
+field_type: decimal

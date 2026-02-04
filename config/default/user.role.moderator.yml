@@ -9,6 +9,7 @@ dependencies:
   module:
     - content_moderation
     - node
+    - renify_tournament
 id: moderator
 label: Moderator
 weight: 5
@@ -19,6 +20,7 @@ permissions:
   - 'edit any players content'
   - 'edit own players content'
   - 'edit own tournaments content'
+  - 'import tournament pairings'
   - 'use editorial transition back_for_review'
   - 'use editorial transition published'
   - 'view any unpublished content'

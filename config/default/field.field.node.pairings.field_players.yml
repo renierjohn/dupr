@@ -1,0 +1,29 @@
+uuid: 8011993f-2444-4681-9128-242b9f2f0c18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_players
+    - node.type.pairings
+    - node.type.players
+id: node.pairings.field_players
+field_name: field_players
+entity_type: node
+bundle: pairings
+label: Players
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      players: players
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

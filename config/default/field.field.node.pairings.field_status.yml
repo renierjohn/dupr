@@ -1,0 +1,33 @@
+uuid: 3c94413b-4960-4f56-9d14-be789a18ebb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_status
+    - node.type.pairings
+    - taxonomy.vocabulary.tournament_type
+  content:
+    - 'taxonomy_term:tournament_type:f49f447b-45ba-4ec4-82f8-cf16e6fceb6f'
+id: node.pairings.field_status
+field_name: field_status
+entity_type: node
+bundle: pairings
+label: Status
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: f49f447b-45ba-4ec4-82f8-cf16e6fceb6f
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tournament_type: tournament_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

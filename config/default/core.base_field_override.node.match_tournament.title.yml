@@ -1,0 +1,18 @@
+uuid: a5d88b0c-b086-4162-9427-efbf10a4ab72
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.match_tournament
+id: node.match_tournament.title
+field_name: title
+entity_type: node
+bundle: match_tournament
+label: 'Match ID'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

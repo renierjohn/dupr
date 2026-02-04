@@ -1,4 +1,4 @@
-uuid: 16d8e929-0bd8-4c00-87b7-830338ec359c
+uuid: c07c166a-2105-456d-98c6-f8db896e5ccf
 langcode: en
 status: true
 dependencies:
@@ -9,10 +9,10 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: 'Matches Tournament'
-type: match_tournament
-description: 'Individual Match Records'
+name: 'List of Pairings'
+type: pairings
+description: 'Registered Players Pairings or Single Player only'
 help: null
 new_revision: false
-preview_mode: 0
+preview_mode: 1
 display_submitted: false

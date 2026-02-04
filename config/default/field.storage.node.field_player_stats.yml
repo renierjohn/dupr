@@ -1,0 +1,30 @@
+uuid: e87e97bd-f457-43d1-904f-6b50a81f7eff
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_player_stats
+field_name: field_player_stats
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: champion
+      label: Champion
+    -
+      value: 1st_runner_up
+      label: '1st Runner Up'
+    -
+      value: 2nd_runner_up
+      label: '2nd Runner Up'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,25 @@
+uuid: 1fb63dd5-bdf2-482b-a474-1d36a14951a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_match_score_a
+    - node.type.match_tournament
+id: node.match_tournament.field_match_score_a
+field_name: field_match_score_a
+entity_type: node
+bundle: match_tournament
+label: 'Match Score A'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: 21
+  prefix: ''
+  suffix: ''
+field_type: integer

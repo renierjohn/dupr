@@ -12,7 +12,7 @@ dependencies:
 id: renify_location
 theme: renify
 region: content
-weight: -4
+weight: -3
 provider: null
 plugin: 'facet_block:location'
 settings:

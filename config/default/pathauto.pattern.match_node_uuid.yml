@@ -1,0 +1,22 @@
+uuid: bf027a70-3382-4faf-b544-aa1d40d4b29c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: match_node_uuid
+label: 'Match ID'
+type: 'canonical_entities:node'
+pattern: '/match/[node:uuid]'
+selection_criteria:
+  5d952fdc-885d-4bf0-951c-fea1c6c12a1e:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 5d952fdc-885d-4bf0-951c-fea1c6c12a1e
+    context_mapping:
+      node: node
+    bundles:
+      match_tournament: match_tournament
+selection_logic: and
+weight: -5
+relationships: {  }

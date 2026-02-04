@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: 'Matches DUPR'
 type: matches
-description: null
+description: 'Automated Matches from DUPR'
 help: null
 new_revision: false
 preview_mode: 1

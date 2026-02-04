@@ -1,0 +1,20 @@
+uuid: 7853b844-a943-45fe-b482-9fe9ddf4eceb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_rs_doubles
+field_name: field_rs_doubles
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -9,10 +9,10 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: Tournaments
+name: 'Tournament Events'
 type: tournaments
-description: null
+description: 'Create upcoming events'
 help: null
 new_revision: false
 preview_mode: 1
-display_submitted: true
+display_submitted: false

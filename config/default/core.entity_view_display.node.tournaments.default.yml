@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.tournaments.field_category
     - field.field.node.tournaments.field_event_date
     - field.field.node.tournaments.field_image
+    - field.field.node.tournaments.field_registered_players
     - image.style.large
     - node.type.tournaments
   module:
@@ -63,6 +64,14 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_registered_players:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
     region: content
   links:
     settings: {  }

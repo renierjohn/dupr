@@ -1,10 +1,17 @@
 uuid: de7b03d8-c82d-454e-82c4-6da5ea27f5e9
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
 _core:
   default_config_hash: i0snV8Wj--OkRW12UdachUiYiz3FbeMwHu_pZYfzKLc
-name: 'Basic page'
+name: 'Landing page'
 type: page
 description: "Use <em>basic pages</em> for your static content, such as an 'About us' page."
 help: null

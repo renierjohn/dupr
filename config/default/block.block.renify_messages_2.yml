@@ -1,0 +1,20 @@
+uuid: 19f68b99-d6d2-461a-98c6-eb302d89ee22
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - renify
+id: renify_messages_2
+theme: renify
+region: content
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,19 @@
+uuid: b93e0538-709d-4889-b8ce-b0bd817a1b3e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_registered_players
+field_name: field_registered_players
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

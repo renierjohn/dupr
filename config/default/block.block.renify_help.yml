@@ -11,7 +11,7 @@ _core:
 id: renify_help
 theme: renify
 region: content
-weight: -6
+weight: -5
 provider: null
 plugin: help_block
 settings:

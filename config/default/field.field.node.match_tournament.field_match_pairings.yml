@@ -1,0 +1,29 @@
+uuid: 629b297e-e301-4134-bc1c-ef36eeea2460
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_match_pairings
+    - node.type.match_tournament
+    - node.type.pairings
+id: node.match_tournament.field_match_pairings
+field_name: field_match_pairings
+entity_type: node
+bundle: match_tournament
+label: 'Match Pairings'
+description: 'Player A vs Player B'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      pairings: pairings
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

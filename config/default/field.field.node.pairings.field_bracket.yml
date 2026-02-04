@@ -1,0 +1,29 @@
+uuid: 45af5a8b-2e2b-4c5d-8954-94b89cbcec85
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bracket
+    - node.type.pairings
+    - taxonomy.vocabulary.bracket
+id: node.pairings.field_bracket
+field_name: field_bracket
+entity_type: node
+bundle: pairings
+label: Bracket
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      bracket: bracket
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
