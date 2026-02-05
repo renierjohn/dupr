@@ -55,6 +55,7 @@ module:
   serialization: 0
   shortcut: 0
   social_link_field: 0
+  sqlite: 0
   system: 0
   taxonomy: 0
   text: 0

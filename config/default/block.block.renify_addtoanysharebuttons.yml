@@ -1,0 +1,25 @@
+uuid: dc3cc856-3af1-4f50-af8e-617b9bb158da
+langcode: en
+status: true
+dependencies:
+  module:
+    - addtoany
+  theme:
+    - renify
+id: renify_addtoanysharebuttons
+theme: renify
+region: footer_bottom
+weight: -8
+provider: null
+plugin: addtoany_block
+settings:
+  id: addtoany_block
+  label: 'AddToAny share buttons'
+  label_display: '0'
+  provider: addtoany
+  context_mapping: {  }
+  buttons_size: null
+  addtoany_html: ''
+  link_url: ''
+  link_title: ''
+visibility: {  }

@@ -1,6 +1,6 @@
-uuid: 9b7aadb1-3ef9-4d43-8702-5b4dec840c25
+uuid: 994a2e58-fc8d-44df-b45a-60c254810c13
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - system.menu.footer
@@ -8,10 +8,10 @@ dependencies:
     - system
   theme:
     - renify
-id: renify_footer
+id: renify_footer_2
 theme: renify
-region: header
-weight: -7
+region: footer_bottom
+weight: -9
 provider: null
 plugin: 'system_menu_block:footer'
 settings:
