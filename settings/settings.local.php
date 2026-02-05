@@ -3,7 +3,7 @@
 $settings['trusted_host_patterns'] = [
   '^events-ph\.com$',
   '^.+\.events-ph\.com$',
-  '^.+\.dupr\ddev\.site$',
+  '^.+\.ddev\.site$',
   '^192.168.1.3$',
 ];
 
