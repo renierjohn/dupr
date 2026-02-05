@@ -16,8 +16,10 @@ footer {
     display: block;
     padding-left: 1rem;
 
-    #block-renify-sitebranding {
+    .site-branding {
       margin-bottom: 1rem;
+      padding: 1rem;
+      margin-left: 1rem;
       background: transparent;
 
       .site-branding__inner img {
@@ -31,4 +33,3 @@ footer {
     color: white;
   }
 }
-
