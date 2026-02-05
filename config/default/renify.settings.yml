@@ -5,10 +5,10 @@ features:
   favicon: 1
 logo:
   use_default: 0
-  path: 'public://favicon_0.png'
+  path: themes/custom/renify/images/favicon.png
 favicon:
   use_default: 0
-  path: 'public://favicon.png'
+  path: themes/custom/renify/images/favicon.png
   mimetype: image/png
 mobile_menu_all_widths: 0
 site_branding_bg_color: gray
