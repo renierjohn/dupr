@@ -2,17 +2,17 @@ uuid: d71a2ebd-64fd-46a5-aa6a-8093738e49e5
 langcode: en
 status: true
 dependencies: {  }
-id: dev
-label: DEV
+id: prod
+label: PROD
 description: ''
 weight: 0
 stackable: false
 no_patching: false
 storage: folder
-folder: ../config/dev
-module:
-  sqlite: 0
+folder: ../config/prod
+module: {  }
 theme: {  }
 complete_list: {  }
 partial_list:
+  - core.extension
   - system.site
