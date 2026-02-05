@@ -15,4 +15,5 @@ theme: {  }
 complete_list: {  }
 partial_list:
   - core.extension
+  - system.performance
   - system.site
