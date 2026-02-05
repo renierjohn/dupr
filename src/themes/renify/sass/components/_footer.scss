@@ -3,8 +3,32 @@
 
 footer {
   &.site-footer {
-    border-inline-start: solid var(--content-left) var(--color--gray-100) !important;
+    border-inline-start: unset;
+    @media (min-width: map-get(var.$breakpoints, 'mobile')) {
+      border-inline-start: solid var(--content-left) var(--color--gray-100) !important;
+    }
     background: #2c3e50;
+    .container {
+      padding: 0;
+    }
+  }
+  .region--footer_top__inner {
+    display: block;
+    padding-left: 1rem;
+
+    #block-renify-sitebranding {
+      margin-bottom: 1rem;
+      background: transparent;
+
+      .site-branding__inner img {
+        border-radius: 50%;
+      }
+    }
+  }
+  .region--footer-bottom {
+    margin-left: 4rem;
+    padding-bottom: 1rem;
+    color: white;
   }
 }
 

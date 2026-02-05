@@ -14,6 +14,10 @@
   .grid-full {
     display: block;
   }
+  .node__content {
+    padding: 0;
+    border-radius: 0;
+  }
 }
 
 .page-node-type-matches {
