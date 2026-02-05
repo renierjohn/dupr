@@ -12,14 +12,9 @@
 body {
   background-color: var.$background-light;
   background-image: none !important;
-  // font-family: var.$font-family !important;
 
   .main-content__container {
     padding-block-start: var.$spacing-lg;
-  }
-  div, span, a, button, ul, li , td, tr {
-     // font-family: var.$font-family !important;
-     // font-weight: 100;
   }
 }
 

@@ -4,6 +4,16 @@ header {
   &.site-header {
     min-height: unset;
     border-bottom: 1px solid var.$gray-200;
+
+    a[data-drupal-link-system-path="search"]:before {
+      content: "\f002"; /* Unicode for magnifying glass */
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900; /* Required for solid icons */
+      font-size: 18px;  /* Adjust size as needed */
+      color: inherit;   /* Keeps the link color consistent */
+      display: inline-block;
+      vertical-align: middle;
+    }
   }
 
   #block-renify-site-branding {
