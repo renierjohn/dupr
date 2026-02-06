@@ -1,0 +1,5 @@
+name: 'Renify URL Alias Redirect'
+type: module
+description: 'Redirects system node paths to their URL aliases.'
+core_version_requirement: ^10 || ^11
+package: Renify

@@ -3,9 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.match_tournament.field_bracket
+    - field.field.node.match_tournament.field_category
     - field.field.node.match_tournament.field_match_pairings
     - field.field.node.match_tournament.field_match_score_a
     - field.field.node.match_tournament.field_match_score_b
+    - field.field.node.match_tournament.field_tournament_id
     - node.type.match_tournament
   module:
     - user
@@ -14,13 +17,29 @@ targetEntityType: node
 bundle: match_tournament
 mode: default
 content:
-  field_match_pairings:
+  field_bracket:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_category:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_match_pairings:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_match_score_a:
     type: number_integer
@@ -29,7 +48,7 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 102
+    weight: 3
     region: content
   field_match_score_b:
     type: number_integer
@@ -38,12 +57,20 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 103
+    weight: 4
+    region: content
+  field_tournament_id:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   addtoany: true

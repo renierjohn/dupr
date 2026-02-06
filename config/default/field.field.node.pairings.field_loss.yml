@@ -1,0 +1,25 @@
+uuid: 860f5cd2-2769-4942-b7e5-a88e55bff66b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_loss
+    - node.type.pairings
+id: node.pairings.field_loss
+field_name: field_loss
+entity_type: node
+bundle: pairings
+label: Loss
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

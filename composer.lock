@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ada9d08669eaa302e6a7a4ea4ae149a9",
+    "content-hash": "806e88faa293224adad354d8b3e78a56",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2910,6 +2910,20 @@
                 }
             ],
             "time": "2025-11-25T18:23:02+00:00"
+        },
+        {
+            "name": "dupr/renify_url_alias",
+            "version": "dev-develop",
+            "dist": {
+                "type": "path",
+                "url": "src/modules/renify_url_alias",
+                "reference": "db8fb895e3e0a8df63c9fa4ccfa98faf49ab3e1e"
+            },
+            "type": "drupal-custom-module",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "egulias/email-validator",
@@ -8080,7 +8094,8 @@
         "dupr/renify_auth": 20,
         "dupr/renify_courtmanager": 20,
         "dupr/renify_dupr": 20,
-        "dupr/renify_tournament": 20
+        "dupr/renify_tournament": 20,
+        "dupr/renify_url_alias": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

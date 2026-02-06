@@ -1,0 +1,6 @@
+services:
+  renify_url_alias.redirect_subscriber:
+    class: Drupal\renify_url_alias\EventSubscriber\RouteNormalizerSubscriber
+    arguments: ['@path_alias.manager', '@path.current']
+    tags:
+      - { name: event_subscriber }

@@ -5,11 +5,17 @@ dependencies:
   config:
     - field.field.node.pairings.field_bracket
     - field.field.node.pairings.field_category
+    - field.field.node.pairings.field_loss
     - field.field.node.pairings.field_players
+    - field.field.node.pairings.field_points_against
+    - field.field.node.pairings.field_points_for
+    - field.field.node.pairings.field_position_quarters
+    - field.field.node.pairings.field_position_semis
     - field.field.node.pairings.field_remarks
     - field.field.node.pairings.field_score_deviation
     - field.field.node.pairings.field_status
     - field.field.node.pairings.field_tournament_joined
+    - field.field.node.pairings.field_win
     - node.type.pairings
   module:
     - user
@@ -34,6 +40,15 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  field_loss:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
   field_players:
     type: entity_reference_label
     label: above
@@ -41,6 +56,42 @@ content:
       link: true
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_points_against:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_points_for:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_position_quarters:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_position_semis:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 113
     region: content
   field_remarks:
     type: basic_string
@@ -75,6 +126,15 @@ content:
       link: true
     third_party_settings: {  }
     weight: 107
+    region: content
+  field_win:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 108
     region: content
   links:
     settings: {  }

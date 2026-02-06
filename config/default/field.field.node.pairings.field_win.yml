@@ -1,0 +1,25 @@
+uuid: efee29e3-5670-4e5a-9946-af8016545923
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_win
+    - node.type.pairings
+id: node.pairings.field_win
+field_name: field_win
+entity_type: node
+bundle: pairings
+label: Win
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

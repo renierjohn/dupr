@@ -1,6 +1,12 @@
 @use 'sass:color';
 @use '../variables' as var;
 
+#block-renify-views-block-events-block-1-2 {
+  h2 {
+    font-size: var.$font-size-xxl;
+  }
+}
+
 #block-renify-views-block-latest-match-block-1 {
   h2 {
     margin: 0;
@@ -109,4 +115,42 @@
       }
     }
   }
+}
+
+.view-display-id-page_1 {
+  .flex {
+    display: flex;
+    &> .attachment-before {
+      width: 100%;
+      display: inline;
+      padding-right: 0;
+      border-right: none;
+
+      @media (min-width: map-get(var.$breakpoints, 'mobile')) {
+        width: 50%;
+        padding-right: 1rem;
+        border-right: 1px solid var.$text-muted;
+      }
+    }
+
+    &> .view-content {
+      width: 100%;
+      padding-right: 0;
+      display: inline;
+      @media (min-width: map-get(var.$breakpoints, 'mobile')) {
+        width: 50%;
+        padding-left: 1rem;
+      }
+    }
+  }
+}
+
+
+
+.views-table {
+    td {
+      .view-display-id-page_1 &, .view-display-id-block_1 & {
+        padding-left: 1rem;
+      }
+    }
 }

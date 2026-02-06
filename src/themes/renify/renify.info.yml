@@ -17,8 +17,7 @@ regions:
   featured: 'Featured'
   breadcrumb: 'Breadcrumb'
   content: 'Content'
-  sidebar_first: 'Sidebar first'
-  sidebar_second: 'Sidebar second'
+  sidebar: 'Sidebar'
   footer_top: 'Footer Top'
   footer_bottom: 'Footer Bottom'
 

@@ -40,3 +40,16 @@ function renify_preprocess_node(&$variables) {
     $variables['default_image_url'] = $default_image_url;
   }
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for views_view.
+ */
+function renify_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+  $view = $variables['view'];
+  $id = $view->storage->id();
+  $display_id = $view->current_display;
+
+  // Add a suggestion based on the view ID and display ID
+  // Result: views-view--my-view-id--block-1.html.twig
+  $suggestions[] = 'views_view__' . $id . '__' . $display_id;
+}

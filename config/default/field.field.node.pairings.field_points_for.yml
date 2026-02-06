@@ -1,0 +1,25 @@
+uuid: e220c9a1-97cb-4492-b288-b4e35c2a0911
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_points_for
+    - node.type.pairings
+id: node.pairings.field_points_for
+field_name: field_points_for
+entity_type: node
+bundle: pairings
+label: 'Points For'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

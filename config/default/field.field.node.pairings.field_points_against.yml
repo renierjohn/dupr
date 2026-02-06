@@ -1,0 +1,25 @@
+uuid: 90416e2f-d310-4f6b-a327-5131f83a75d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_points_against
+    - node.type.pairings
+id: node.pairings.field_points_against
+field_name: field_points_against
+entity_type: node
+bundle: pairings
+label: 'Points Against'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

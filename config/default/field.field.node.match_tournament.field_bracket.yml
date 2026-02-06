@@ -1,0 +1,29 @@
+uuid: be0025e5-4dde-468e-b649-6ed4bbeb312b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bracket
+    - node.type.match_tournament
+    - taxonomy.vocabulary.bracket
+id: node.match_tournament.field_bracket
+field_name: field_bracket
+entity_type: node
+bundle: match_tournament
+label: Bracket
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      bracket: bracket
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

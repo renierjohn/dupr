@@ -5,15 +5,96 @@ dependencies:
   config:
     - field.field.node.pairings.field_bracket
     - field.field.node.pairings.field_category
+    - field.field.node.pairings.field_loss
     - field.field.node.pairings.field_players
+    - field.field.node.pairings.field_points_against
+    - field.field.node.pairings.field_points_for
+    - field.field.node.pairings.field_position_quarters
+    - field.field.node.pairings.field_position_semis
     - field.field.node.pairings.field_remarks
     - field.field.node.pairings.field_score_deviation
     - field.field.node.pairings.field_status
     - field.field.node.pairings.field_tournament_joined
+    - field.field.node.pairings.field_win
     - node.type.pairings
   module:
     - content_moderation
+    - field_group
     - path
+third_party_settings:
+  field_group:
+    group_group_tab:
+      children:
+        - group_stats
+        - group_status
+        - group_category
+      label: 'Group Tab'
+      region: content
+      parent_name: ''
+      weight: 8
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        direction: horizontal
+        width_breakpoint: 640
+    group_stats:
+      children:
+        - field_win
+        - field_loss
+        - field_points_for
+        - field_points_against
+        - field_score_deviation
+      label: Ranking
+      region: content
+      parent_name: group_group_tab
+      weight: 22
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_status:
+      children:
+        - field_status
+        - field_position_quarters
+        - field_position_semis
+      label: Status
+      region: content
+      parent_name: group_group_tab
+      weight: 23
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_category:
+      children:
+        - field_category
+        - field_bracket
+      label: Category
+      region: hidden
+      parent_name: group_group_tab
+      weight: 21
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
 id: node.pairings.default
 targetEntityType: node
 bundle: pairings
@@ -27,19 +108,26 @@ content:
     third_party_settings: {  }
   field_bracket:
     type: options_buttons
-    weight: 9
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   field_category:
     type: options_buttons
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_loss:
+    type: number
+    weight: 12
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_players:
     type: entity_reference_autocomplete
-    weight: 8
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS
@@ -47,9 +135,37 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_points_against:
+    type: number
+    weight: 14
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_points_for:
+    type: number
+    weight: 13
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_position_quarters:
+    type: number
+    weight: 23
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_position_semis:
+    type: number
+    weight: 24
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_remarks:
     type: string_textarea
-    weight: 12
+    weight: 11
     region: content
     settings:
       rows: 5
@@ -57,14 +173,14 @@ content:
     third_party_settings: {  }
   field_score_deviation:
     type: number
-    weight: 7
+    weight: 15
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_status:
     type: options_buttons
-    weight: 11
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -78,6 +194,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_win:
+    type: number
+    weight: 11
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
     weight: 4
@@ -87,6 +210,11 @@ content:
   path:
     type: path
     weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -1,16 +1,16 @@
-uuid: 2b2bcda2-c494-4c70-9346-7ab1969e6d2e
+uuid: 47add638-c5ef-4de2-ac82-7c776d391690
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
-id: node.field_category
-field_name: field_category
+id: node.field_loss
+field_name: field_loss
 entity_type: node
-type: entity_reference
+type: integer
 settings:
-  target_type: taxonomy_term
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1

@@ -1,16 +1,16 @@
-uuid: 2b2bcda2-c494-4c70-9346-7ab1969e6d2e
+uuid: 89ca0125-6c2e-44de-8b7e-a95d84fc3b60
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
-id: node.field_category
-field_name: field_category
+id: node.field_position_semis
+field_name: field_position_semis
 entity_type: node
-type: entity_reference
+type: integer
 settings:
-  target_type: taxonomy_term
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1

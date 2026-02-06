@@ -1,0 +1,7 @@
+services:
+  renify_tournament.csv_processor:
+    class: Drupal\renify_tournament\Service\CsvPairingProcessor
+    arguments: ['@entity_type.manager', '@database']
+  renify_tournament.match_generator:
+    class: Drupal\renify_tournament\Service\MatchGenerator
+    arguments: ['@entity_type.manager']

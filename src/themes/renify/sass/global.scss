@@ -16,5 +16,48 @@ body {
   .main-content__container {
     padding-block-start: var.$spacing-lg;
   }
-}
 
+  a {
+    text-decoration: none;
+
+    &:hover, &:focus {
+      color: var.$text-dark;
+    }
+  }
+
+  footer {
+    a {
+      &:hover, &:focus {
+        color: var.$primary-color !important;
+      }
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-block: 0
+  }
+
+  .sidebar-grid {
+
+    .site-main {
+      grid-column: 1/6;
+      @media (min-width: map-get(var.$breakpoints, 'mobile')) {
+       grid-column: 1/8;
+      }
+      @media (min-width: map-get(var.$breakpoints, 'tablet')) {
+       grid-column: 1/6;
+      }
+    }
+
+    .region--sidebar {
+      grid-column: 1/6;
+
+      @media (min-width: map-get(var.$breakpoints, 'mobile')) {
+       grid-column: 8/15;
+      }
+      @media (min-width: map-get(var.$breakpoints, 'tablet')) {
+       grid-column: 6/15;
+      }
+    }
+  }
+}

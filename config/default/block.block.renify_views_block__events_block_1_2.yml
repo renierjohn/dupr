@@ -1,22 +1,22 @@
-uuid: 5c2b9c11-3533-485b-abf6-4c64dc88935c
+uuid: be7ac2df-b6bc-40ae-ab22-26e3110f1d13
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.moderator_dashboard
+    - views.view.events
   module:
     - node
     - views
   theme:
     - renify
-id: renify_views_block__moderator_dashboard_block_1
+id: renify_views_block__events_block_1_2
 theme: renify
-region: content
-weight: 0
+region: sidebar
+weight: -10
 provider: null
-plugin: 'views_block:moderator_dashboard-block_1'
+plugin: 'views_block:events-block_1'
 settings:
-  id: 'views_block:moderator_dashboard-block_1'
+  id: 'views_block:events-block_1'
   label: ''
   label_display: visible
   provider: views

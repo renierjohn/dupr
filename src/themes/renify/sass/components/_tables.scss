@@ -11,6 +11,14 @@
     font-family: var(--font-sans);
   }
 
+  caption {
+    font-size: var.$font-size-xxl !important;
+    font-style: normal !important;
+    font-family: inherit !important;
+    margin: 0 !important;
+    line-height: normal;
+  }
+
   tr {
     transition: box-shadow 0.2s ease;
 
@@ -48,6 +56,10 @@
 
     .field--name-field-dupr-id {
       .field__item {
+        @media (min-width: map-get(var.$breakpoints, 'mobile')) {
+          font-size: var.$font-size-md;
+        }
+
         background-color: var.$primary-color;
         display: inline;
         color: white;
@@ -55,9 +67,6 @@
         border-radius: 1rem;
         font-size: var.$font-size-sm;
 
-        @media (min-width: map-get(var.$breakpoints, 'mobile')) {
-          font-size: var.$font-size-md;
-        }
       }
     }
 

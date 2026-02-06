@@ -2,7 +2,12 @@
   "name": "renify",
   "private": true,
   "scripts": {
-    "livereload": "livereload --exclusions node_modules/ --exts 'css,js,twig,theme,apng,avif,gif,jpg,jpeg,jfif,pjpeg,pjp,png,svg,webp'"
+    "build:sass": "sass sass:css --no-source-map",
+    "build:postcss": "postcss css/*.css --use autoprefixer -d css/",
+    "build": "npm-run-all build:sass build:postcss",
+    "dev": "npm-run-all --parallel watch:*",
+    "watch:sass": "sass sass:css --watch --no-source-map",
+    "watch:postcss": "postcss css/*.css --use autoprefixer -d css/ --watch"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.23",
@@ -12,15 +17,10 @@
     "postcss-cli": "^11.0.1",
     "sass": "^1.97.3"
   },
-  "scripts": {
-    "build:sass": "sass sass:css --no-source-map",
-    "build:postcss": "postcss css/*.css --use autoprefixer -d css/",
-    "build": "npm-run-all build:sass build:postcss",
-    "dev": "npm-run-all --parallel watch:*",
-    "watch:sass": "sass sass:css --watch --no-source-map",
-    "watch:postcss": "postcss css/*.css --use autoprefixer -d css/ --watch"
-  },
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "cssnano": "^7.1.2"
+  }
 }

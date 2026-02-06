@@ -1,0 +1,25 @@
+uuid: 93456de3-86b4-42e3-85fe-956298f7125c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_position_semis
+    - node.type.pairings
+id: node.pairings.field_position_semis
+field_name: field_position_semis
+entity_type: node
+bundle: pairings
+label: 'Position Semis'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: 2
+  prefix: ''
+  suffix: ''
+field_type: integer

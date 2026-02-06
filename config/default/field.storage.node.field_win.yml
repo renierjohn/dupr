@@ -1,16 +1,16 @@
-uuid: 2b2bcda2-c494-4c70-9346-7ab1969e6d2e
+uuid: 1765c1c0-def2-4cf6-88a4-9606f4f62304
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
-id: node.field_category
-field_name: field_category
+id: node.field_win
+field_name: field_win
 entity_type: node
-type: entity_reference
+type: integer
 settings:
-  target_type: taxonomy_term
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1
