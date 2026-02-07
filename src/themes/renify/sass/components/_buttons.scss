@@ -1,0 +1,25 @@
+.btn-upload-icon {
+  &::before {
+    // content: "\f093"; /* FontAwesome Upload Code */
+    // font-family: "Font Awesome 5 Free";
+    // font-weight: 900;
+    // margin-right: 8px;
+          font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        content: "\f058"; /* Unicode for circle-check */
+        color: #1DA1F2;
+        margin-right: 0.5rem;
+        font-size: 0.9em;
+  }
+}
+
+.btn-magic-icon {
+  &::before {
+           font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        content: "\f058"; /* Unicode for circle-check */
+        color: #1DA1F2;
+        margin-right: 0.5rem;
+        font-size: 0.9em;
+  }
+}

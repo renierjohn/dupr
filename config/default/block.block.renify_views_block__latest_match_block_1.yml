@@ -12,7 +12,7 @@ dependencies:
 id: renify_views_block__latest_match_block_1
 theme: renify
 region: content
-weight: -1
+weight: -6
 provider: null
 plugin: 'views_block:latest_match-block_1'
 settings:

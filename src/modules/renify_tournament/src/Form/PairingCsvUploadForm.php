@@ -39,12 +39,6 @@ class PairingCsvUploadForm extends FormBase {
       '#value' => $tournament_id,
     ];
 
-    $form['sample_link'] = [
-      '#type' => 'item',
-      '#markup' => '<a href="/tournaments/sample-csv" class="button button--small">' . $this->t('Download Sample CSV') . '</a>',
-      '#description' => $this->t('Download this template to ensure your headers match our system.'),
-    ];
-
     $form['csv_file'] = [
       '#type' => 'managed_file',
       '#title' => $this->t('Upload Pairings CSV'),
@@ -56,16 +50,47 @@ class PairingCsvUploadForm extends FormBase {
       '#upload_location' => 'public://csv-imports/',
     ];
 
+
+    $form['sample_link'] = [
+      '#type' => 'item',
+      '#markup' => '<a href="/tournaments/sample-csv" class="button button--small">' . $this->t('Download Sample CSV') . '</a>',
+      '#description' => $this->t('Download this template to ensure your headers match our system.'),
+    ];
+
+    $form['actions']['submit_btn'] = [
+      '#type' => 'inline_template',
+      '#template' => '<button type="submit" name="op" value="Upload" data-drupal-selector="edit-submit" class="button button--primary"><i class="fas fa-upload"></i> {{ label }}</button>',
+      '#context' => [
+        'label' => $this->t('Upload'),
+      ],
+    ];
+
     $form['actions']['submit'] = [
       '#type' => 'submit',
-      '#value' => $this->t('Upload to Generate Pairings'),
+      '#value' => $this->t('Upload'),
       '#button_type' => 'primary',
+      '#attributes' => [
+        'class' => ['visually-hidden'],
+      ],
+    ];
+
+    $form['actions']['generate_btn'] = [
+      '#type' => 'inline_template',
+      '#template' => '<button type="submit" name="op" data-drupal-selector="edit-generate" value="Generate Matches" class="button button--secondary">
+          <i class="fas fa-magic"></i> {{ label }}
+        </button>',
+      '#context' => [
+        'label' => $this->t('Generate Match'),
+      ],
     ];
 
     $form['actions']['generate'] = [
       '#type' => 'submit',
       '#value' => $this->t('Generate Matches'),
       '#button_type' => 'secondary',
+      '#attributes' => [
+        'class' => ['visually-hidden'],
+      ],
     ];
 
     return $form;

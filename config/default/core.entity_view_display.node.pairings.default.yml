@@ -9,8 +9,6 @@ dependencies:
     - field.field.node.pairings.field_players
     - field.field.node.pairings.field_points_against
     - field.field.node.pairings.field_points_for
-    - field.field.node.pairings.field_position_quarters
-    - field.field.node.pairings.field_position_semis
     - field.field.node.pairings.field_remarks
     - field.field.node.pairings.field_score_deviation
     - field.field.node.pairings.field_status
@@ -74,24 +72,6 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 110
-    region: content
-  field_position_quarters:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 112
-    region: content
-  field_position_semis:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 113
     region: content
   field_remarks:
     type: basic_string

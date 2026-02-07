@@ -7,5 +7,17 @@ export default defineConfig({
   server: {
     port: 3000, // Optional: fixed port for easy access
     open: true  // Optional: opens browser on start
-  }
+  },
+  build: {
+      rollupOptions: {
+        output: {
+          // Fixes the main entry JS file name
+          entryFileNames: `assets/[name].js`,
+          // Fixes names for dynamically imported chunks
+          chunkFileNames: `assets/[name].js`,
+          // Fixes names for CSS and other assets (images, etc)
+          assetFileNames: `assets/[name].[ext]`
+        },
+      },
+    },
 })

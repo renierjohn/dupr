@@ -1,0 +1,11 @@
+group-stage:
+  css:
+    theme:
+      js/dist/assets/index.css: {}
+  js:
+    js/dist/assets/index.js: {}
+    js/module.js: {}
+
+ajax-link:
+  js:
+    js/module_ajax.js: {}

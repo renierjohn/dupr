@@ -4,17 +4,16 @@ status: true
 dependencies:
   config:
     - field.field.node.tournaments.body
-    - field.field.node.tournaments.field_category
     - field.field.node.tournaments.field_event_date
     - field.field.node.tournaments.field_image
-    - field.field.node.tournaments.field_registered_players
+    - field.field.node.tournaments.field_tournament_categories
+    - field.field.node.tournaments.field_tournament_location
     - image.style.thumbnail
     - node.type.tournaments
   module:
     - content_moderation
     - field_group
     - image
-    - inline_entity_form
     - path
     - text
 third_party_settings:
@@ -39,7 +38,7 @@ third_party_settings:
         width_breakpoint: 640
     group_category_event:
       children:
-        - field_category
+        - field_tournament_categories
       label: Category
       region: content
       parent_name: group_category
@@ -72,6 +71,7 @@ third_party_settings:
         required_fields: true
     group_details_tab:
       children:
+        - field_tournament_location
         - body
       label: Info
       region: content
@@ -101,21 +101,6 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-    group_item_players:
-      children:
-        - field_registered_players
-      label: Upload
-      region: content
-      parent_name: ''
-      weight: 7
-      format_type: fieldset
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        label_as_html: false
-        description: 'Upload xls or csv file from registered players.'
-        required_fields: true
 id: node.tournaments.default
 targetEntityType: node
 bundle: tournaments
@@ -123,7 +108,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 23
+    weight: 28
     region: content
     settings:
       rows: 9
@@ -134,12 +119,6 @@ content:
   created:
     type: datetime_timestamp
     weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_category:
-    type: options_buttons
-    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -157,23 +136,21 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-  field_registered_players:
-    type: inline_entity_form_complex
-    weight: 8
+  field_tournament_categories:
+    type: options_buttons
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tournament_location:
+    type: entity_reference_autocomplete
+    weight: 27
     region: content
     settings:
-      form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: false
       match_operator: CONTAINS
-      allow_duplicate: false
-      collapsible: true
-      collapsed: false
-      revision: false
-      removed_reference: optional
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
@@ -184,6 +161,11 @@ content:
   path:
     type: path
     weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }

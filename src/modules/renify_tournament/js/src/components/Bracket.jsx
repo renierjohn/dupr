@@ -3,7 +3,7 @@ import MatchCard from "./MatchCard";
 
 const Bracket = () => {
   return (
-    <div className="flex justify-center items-start gap-12 overflow-x-auto p-4">
+    <div className="flex justify-start md:justify-center items-start gap-6 md:gap-12 overflow-x-auto p-4 md:p-8">
       {tournamentData.map((round, roundIndex) => (
         <div key={roundIndex} className="flex flex-col items-center min-w-[250px]">
           {/* Round Header */}

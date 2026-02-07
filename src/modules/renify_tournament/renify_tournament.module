@@ -5,6 +5,21 @@
  * Primary module hooks for renify_tournament module.
  */
 
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\CloseModalDialogCommand;
+use Drupal\Core\Ajax\RedirectCommand;
+use Drupal\Core\Url;
+
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function renify_tournament_preprocess_page(&$vars) {
+  $vars['#attached']['library'][] = 'renify_tournament/ajax-link';
+}
+
+
 /**
  * Implements hook_entity_extra_field_info().
  */
@@ -31,4 +46,81 @@ function renify_tournament_node_view(array &$build, \Drupal\Core\Entity\EntityIn
       );
     }
   }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function renify_tournament_theme($existing, $type, $theme, $path) {
+  return [
+    'group_stage' => [
+      'variables' => [
+        'tournament_id' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function renify_tournament_entity_type_alter(array &$entity_types) {
+  if (isset($entity_types['node'])) {
+    // This forces the node entity to recognize 'offcanvas' as a valid form operation.
+    $entity_types['node']->setFormClass('offcanvas', 'Drupal\node\NodeForm');
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for node_form.
+ */
+function renify_tournament_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Check if we are in our specific form mode.
+  $form_display = $form_state->getStorage()['form_display'] ?? NULL;
+
+  if ($form_display && $form_display->getMode() === 'offcanvas') {
+    // Add our custom AJAX callback to the submit button.
+    $form['actions']['submit']['#ajax'] = [
+      'callback' => '_renify_tournament_pairing_ajax_submit',
+      'event' => 'click',
+    ];
+  }
+}
+
+
+/**
+ * AJAX callback to close modal and redirect to a specific node's alias.
+ */
+function _renify_tournament_pairing_ajax_submit(array $form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $response = new AjaxResponse();
+
+  // If there are validation errors, return the form to show them.
+  if ($form_state->hasAnyErrors()) {
+    return $form;
+  }
+
+  // 1. Get the NID you want to redirect to.
+  // For example, if you want to redirect to the tournament node associated with the pairing:
+  $node = $form_state->getFormObject()->getEntity();
+
+  // Replace 'field_tournament_joined' with your actual field name
+  // that holds the reference to the page you want to go back to.
+  $target_nid = $node->get('field_tournament_joined')->target_id;
+
+  if ($target_nid) {
+    // 2. Generate the URL to that node.
+    // Drupal's Url::fromRoute automatically fetches the Alias.
+    $url = Url::fromRoute('entity.node.canonical', ['node' => $target_nid])->toString();
+
+    // 3. Close modal and Redirect.
+    $response->addCommand(new CloseModalDialogCommand());
+    $response->addCommand(new RedirectCommand($url));
+  }
+  else {
+    // Fallback: Just reload the current page if no target NID is found.
+    $response->addCommand(new CloseModalDialogCommand());
+    $response->addCommand(new RedirectCommand('<front>'));
+  }
+
+  return $response;
 }

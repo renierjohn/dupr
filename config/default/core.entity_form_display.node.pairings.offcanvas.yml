@@ -1,0 +1,123 @@
+uuid: 2eb39531-9653-413c-8399-d1e3780fb4f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.offcanvas
+    - field.field.node.pairings.field_bracket
+    - field.field.node.pairings.field_category
+    - field.field.node.pairings.field_loss
+    - field.field.node.pairings.field_players
+    - field.field.node.pairings.field_points_against
+    - field.field.node.pairings.field_points_for
+    - field.field.node.pairings.field_remarks
+    - field.field.node.pairings.field_score_deviation
+    - field.field.node.pairings.field_status
+    - field.field.node.pairings.field_tournament_joined
+    - field.field.node.pairings.field_win
+    - node.type.pairings
+  module:
+    - field_group
+third_party_settings:
+  field_group:
+    group_group_tab:
+      children:
+        - group_status
+        - group_category
+        - group_stats
+      label: 'Group Tab'
+      region: hidden
+      parent_name: ''
+      weight: 8
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        direction: horizontal
+        width_breakpoint: 640
+    group_stats:
+      children:
+        - field_win
+        - field_loss
+        - field_points_for
+        - field_points_against
+        - field_score_deviation
+      label: Elimination
+      region: hidden
+      parent_name: group_group_tab
+      weight: 22
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_status:
+      children:
+        - uid
+      label: 'Group Stage'
+      region: hidden
+      parent_name: group_group_tab
+      weight: 4
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_category:
+      children:
+        - field_category
+        - field_bracket
+      label: Category
+      region: hidden
+      parent_name: group_group_tab
+      weight: 21
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
+id: node.pairings.offcanvas
+targetEntityType: node
+bundle: pairings
+mode: offcanvas
+content:
+  field_status:
+    type: options_buttons
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_bracket: true
+  field_category: true
+  field_loss: true
+  field_players: true
+  field_points_against: true
+  field_points_for: true
+  field_remarks: true
+  field_score_deviation: true
+  field_tournament_joined: true
+  field_win: true
+  moderation_state: true
+  path: true
+  promote: true
+  simple_sitemap: true
+  status: true
+  sticky: true
+  title: true
+  uid: true

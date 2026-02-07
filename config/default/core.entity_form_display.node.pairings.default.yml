@@ -9,8 +9,6 @@ dependencies:
     - field.field.node.pairings.field_players
     - field.field.node.pairings.field_points_against
     - field.field.node.pairings.field_points_for
-    - field.field.node.pairings.field_position_quarters
-    - field.field.node.pairings.field_position_semis
     - field.field.node.pairings.field_remarks
     - field.field.node.pairings.field_score_deviation
     - field.field.node.pairings.field_status
@@ -47,7 +45,7 @@ third_party_settings:
         - field_points_for
         - field_points_against
         - field_score_deviation
-      label: Ranking
+      label: Elimination
       region: content
       parent_name: group_group_tab
       weight: 22
@@ -65,7 +63,7 @@ third_party_settings:
         - field_status
         - field_position_quarters
         - field_position_semis
-      label: Status
+      label: 'Group Stage'
       region: content
       parent_name: group_group_tab
       weight: 23
@@ -145,20 +143,6 @@ content:
   field_points_for:
     type: number
     weight: 13
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_position_quarters:
-    type: number
-    weight: 23
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_position_semis:
-    type: number
-    weight: 24
     region: content
     settings:
       placeholder: ''

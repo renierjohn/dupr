@@ -1,15 +1,16 @@
-uuid: b93e0538-709d-4889-b8ce-b0bd817a1b3e
+uuid: 752120f2-72c2-44ef-b77d-c83007a7128c
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_registered_players
-field_name: field_registered_players
+    - taxonomy
+id: node.field_tournament_categories
+field_name: field_tournament_categories
 entity_type: node
 type: entity_reference
 settings:
-  target_type: node
+  target_type: taxonomy_term
 module: core
 locked: false
 cardinality: -1

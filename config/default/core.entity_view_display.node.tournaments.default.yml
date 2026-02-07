@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.tournaments.body
-    - field.field.node.tournaments.field_category
     - field.field.node.tournaments.field_event_date
     - field.field.node.tournaments.field_image
-    - field.field.node.tournaments.field_registered_players
+    - field.field.node.tournaments.field_tournament_categories
+    - field.field.node.tournaments.field_tournament_location
     - image.style.large
     - node.type.tournaments
   module:
@@ -24,15 +24,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 100
-    region: content
-  field_category:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 101
+    weight: 4
     region: content
   field_event_date:
     type: timestamp
@@ -65,18 +57,31 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_registered_players:
+  field_tournament_categories:
     type: entity_reference_label
     label: above
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
-    weight: 102
+    weight: 3
+    region: content
+  field_tournament_location:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 5
+    region: content
+  pairing_csv_form:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
     region: content
 hidden:
   addtoany: true

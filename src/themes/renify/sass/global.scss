@@ -1,12 +1,15 @@
 @use 'variables' as var;
 @use 'sass:color'; // Import the built-in Sass color module
-@use 'components/header';
-@use 'components/footer';
+
+@use 'components/buttons';
+@use 'components/common';
 @use 'components/facets';
-@use 'components/tables'; // Added this
-@use 'components/views'; // Added this
-@use 'components/node'; // Added this
-@use 'components/form'; // Added this
+@use 'components/footer';
+@use 'components/form';
+@use 'components/header';
+@use 'components/node';
+@use 'components/tables';
+@use 'components/views';
 
 // Keep Olivero's structural classes but apply your SASS logic
 body {
@@ -37,10 +40,14 @@ body {
     margin-block: 0
   }
 
+  .text-winner {
+    color: var.$primary-color;
+  }
+
   .sidebar-grid {
 
     .site-main {
-      grid-column: 1/6;
+      grid-column: 1/7;
       @media (min-width: map-get(var.$breakpoints, 'mobile')) {
        grid-column: 1/8;
       }
@@ -50,7 +57,7 @@ body {
     }
 
     .region--sidebar {
-      grid-column: 1/6;
+      grid-column: 1/7;
 
       @media (min-width: map-get(var.$breakpoints, 'mobile')) {
        grid-column: 8/15;

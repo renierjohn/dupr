@@ -1,0 +1,11 @@
+uuid: d25268c9-ab48-456c-a07c-18ee542fb84f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.offcanvas
+label: Offcanvas
+description: null
+targetEntityType: node
+cache: true

@@ -10,8 +10,8 @@ _core:
   default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
 id: renify_help
 theme: renify
-region: content
-weight: -5
+region: breadcrumb
+weight: -6
 provider: null
 plugin: help_block
 settings:

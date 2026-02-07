@@ -5,10 +5,10 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.tournaments.body
-    - field.field.node.tournaments.field_category
     - field.field.node.tournaments.field_event_date
     - field.field.node.tournaments.field_image
-    - field.field.node.tournaments.field_registered_players
+    - field.field.node.tournaments.field_tournament_categories
+    - field.field.node.tournaments.field_tournament_location
     - node.type.tournaments
   module:
     - text
@@ -31,10 +31,15 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  pairing_csv_form:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
 hidden:
   addtoany: true
-  field_category: true
   field_event_date: true
   field_image: true
-  field_registered_players: true
+  field_tournament_categories: true
+  field_tournament_location: true
   search_api_excerpt: true

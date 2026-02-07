@@ -5,3 +5,21 @@ renify_tournament.sample_csv:
     _title: 'Download Sample CSV'
   requirements:
     _permission: 'access content' # Or a more specific permission
+
+# Group Stage Page.
+renify_tournament.group_stage:
+  path: '/tournaments/group-stage'
+  defaults:
+    _controller: '\Drupal\renify_tournament\Controller\GroupStageController::content'
+    _title: 'Group Stage'
+  requirements:
+    _permission: 'access content'
+
+# Form modal.
+renify_tournament.pairing_edit_modal:
+  path: '/form/tournaments/pairings'
+  defaults:
+    _controller: '\Drupal\renify_tournament\Controller\PairingModalController::openForm'
+    _title: 'Edit Pairing'
+  requirements:
+    _user_is_logged_in: 'TRUE'

@@ -8,8 +8,8 @@ _core:
   default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
 id: renify_primary_local_tasks
 theme: renify
-region: content
-weight: -7
+region: breadcrumb
+weight: -8
 provider: null
 plugin: local_tasks_block
 settings:

@@ -1,16 +1,16 @@
-uuid: 3ad8700b-ae20-43c6-a2d2-2eabf6cf26f2
+uuid: 7bee14b6-c3a7-4704-9dc2-a8db6b456c5f
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_category
+    - field.storage.node.field_tournament_location
     - node.type.tournaments
-    - taxonomy.vocabulary.category
-id: node.tournaments.field_category
-field_name: field_category
+    - taxonomy.vocabulary.tags
+id: node.tournaments.field_tournament_location
+field_name: field_tournament_location
 entity_type: node
 bundle: tournaments
-label: Category
+label: Location
 description: ''
 required: false
 translatable: false
@@ -20,10 +20,10 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      category: category
+      tags: tags
     sort:
       field: name
       direction: asc
-    auto_create: false
+    auto_create: true
     auto_create_bundle: ''
 field_type: entity_reference

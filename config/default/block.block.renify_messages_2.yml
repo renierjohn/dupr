@@ -8,8 +8,8 @@ dependencies:
     - renify
 id: renify_messages_2
 theme: renify
-region: content
-weight: -6
+region: breadcrumb
+weight: -7
 provider: null
 plugin: system_messages_block
 settings:

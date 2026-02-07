@@ -120,6 +120,12 @@
 .view-display-id-page_1 {
   .flex {
     display: flex;
+    flex-direction: column;
+
+    @media (min-width: map-get(var.$breakpoints, 'mobile')) {
+      flex-direction: row;
+    }
+
     &> .attachment-before {
       width: 100%;
       display: inline;
@@ -129,7 +135,7 @@
       @media (min-width: map-get(var.$breakpoints, 'mobile')) {
         width: 50%;
         padding-right: 1rem;
-        border-right: 1px solid var.$text-muted;
+        border-right: 1px solid #6c757d30;
       }
     }
 
