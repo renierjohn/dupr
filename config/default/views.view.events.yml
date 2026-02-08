@@ -2088,6 +2088,19 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
+        field_win_value:
+          id: field_win_value
+          table: node__field_win
+          field: field_win_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments:
         field_tournament_joined_target_id:
           id: field_tournament_joined_target_id
