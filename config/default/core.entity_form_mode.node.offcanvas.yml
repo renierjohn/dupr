@@ -5,7 +5,7 @@ dependencies:
   module:
     - node
 id: node.offcanvas
-label: Offcanvas
+label: 'Modal Player Standing'
 description: null
 targetEntityType: node
 cache: true

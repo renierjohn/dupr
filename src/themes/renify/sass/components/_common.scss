@@ -20,5 +20,16 @@ a {
     color: var.$text-gold;
     font-weight: 1000;
   }
+  &.score_team_a, &.score_team_b {
+    color: var.$gray-900;
+    font-weight: 1000;
+  }
+}
+
+div {
+  &.score_team_a, &.score_team_b {
+    color: var.$gray-400;
+    font-weight: 500;
+  }
 }
 

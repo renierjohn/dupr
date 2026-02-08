@@ -7,12 +7,12 @@ dependencies:
 id: tournaments
 label: Tournaments
 type: 'canonical_entities:node'
-pattern: '/tournaments/[node:title]'
+pattern: '[node:title]'
 selection_criteria:
-  5bc96186-faa9-4d69-86ac-88f140f8dbd3:
+  1417842e-ca83-4cc9-af09-7894f3d18f07:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 5bc96186-faa9-4d69-86ac-88f140f8dbd3
+    uuid: 1417842e-ca83-4cc9-af09-7894f3d18f07
     context_mapping:
       node: node
     bundles:

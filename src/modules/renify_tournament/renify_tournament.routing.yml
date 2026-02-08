@@ -15,11 +15,20 @@ renify_tournament.group_stage:
   requirements:
     _permission: 'access content'
 
-# Form modal.
+# Form modal for Player Standing.
 renify_tournament.pairing_edit_modal:
   path: '/form/tournaments/pairings'
   defaults:
-    _controller: '\Drupal\renify_tournament\Controller\PairingModalController::openForm'
+    _controller: '\Drupal\renify_tournament\Controller\PairingModalController::openFormStanding'
+    _title: 'Edit Pairing'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+
+# Form modal for Scoring.
+renify_tournament.pairing_edit_score:
+  path: '/form/tournaments/score'
+  defaults:
+    _controller: '\Drupal\renify_tournament\Controller\PairingModalController::openFormScoring'
     _title: 'Edit Pairing'
   requirements:
     _user_is_logged_in: 'TRUE'

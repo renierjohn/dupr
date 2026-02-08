@@ -1,0 +1,50 @@
+uuid: 4363fd5b-75d4-4a23-8bd3-5eb3e43fb693
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.score
+    - field.field.node.match_tournament.field_bracket
+    - field.field.node.match_tournament.field_category
+    - field.field.node.match_tournament.field_match_lossser
+    - field.field.node.match_tournament.field_match_pairings
+    - field.field.node.match_tournament.field_match_score_a
+    - field.field.node.match_tournament.field_match_score_b
+    - field.field.node.match_tournament.field_match_winner
+    - field.field.node.match_tournament.field_tournament_id
+    - node.type.match_tournament
+id: node.match_tournament.score
+targetEntityType: node
+bundle: match_tournament
+mode: score
+content:
+  field_match_score_a:
+    type: number
+    weight: 0
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_match_score_b:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_bracket: true
+  field_category: true
+  field_match_lossser: true
+  field_match_pairings: true
+  field_match_winner: true
+  field_tournament_id: true
+  moderation_state: true
+  path: true
+  promote: true
+  simple_sitemap: true
+  status: true
+  sticky: true
+  title: true
+  uid: true

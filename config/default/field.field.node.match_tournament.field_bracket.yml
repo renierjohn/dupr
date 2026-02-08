@@ -1,4 +1,4 @@
-uuid: be0025e5-4dde-468e-b649-6ed4bbeb312b
+uuid: 92fb8196-2595-474f-954f-6f832ad36501
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ entity_type: node
 bundle: match_tournament
 label: Bracket
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

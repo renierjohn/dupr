@@ -1,0 +1,29 @@
+uuid: e511ab21-f34b-49ba-a1ce-243f0c79607f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_match_lossser
+    - node.type.match_tournament
+    - node.type.pairings
+id: node.match_tournament.field_match_lossser
+field_name: field_match_lossser
+entity_type: node
+bundle: match_tournament
+label: 'Match Losser'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      pairings: pairings
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

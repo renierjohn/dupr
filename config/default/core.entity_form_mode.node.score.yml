@@ -1,0 +1,11 @@
+uuid: 14b59622-cd32-4609-98af-1b1d5a724625
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.score
+label: 'Modal Player Score'
+description: null
+targetEntityType: node
+cache: true

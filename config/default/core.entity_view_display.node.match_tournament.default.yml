@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.node.match_tournament.field_bracket
     - field.field.node.match_tournament.field_category
+    - field.field.node.match_tournament.field_match_lossser
     - field.field.node.match_tournament.field_match_pairings
     - field.field.node.match_tournament.field_match_score_a
     - field.field.node.match_tournament.field_match_score_b
+    - field.field.node.match_tournament.field_match_winner
     - field.field.node.match_tournament.field_tournament_id
     - node.type.match_tournament
   module:
@@ -32,6 +34,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_match_lossser:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_match_pairings:
     type: entity_reference_label
@@ -58,6 +68,14 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_match_winner:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_tournament_id:
     type: entity_reference_label

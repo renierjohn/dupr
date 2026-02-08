@@ -5,3 +5,9 @@ services:
   renify_tournament.match_generator:
     class: Drupal\renify_tournament\Service\MatchGenerator
     arguments: ['@entity_type.manager']
+  renify_tournament.score_generator:
+    class: Drupal\renify_tournament\Service\ScoreGeneratorService
+    arguments: ['@entity_type.manager']
+  renify_tournament.reset_match:
+    class: Drupal\renify_tournament\Service\ResetMatchService
+    arguments: ['@entity_type.manager']

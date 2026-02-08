@@ -1,0 +1,23 @@
+uuid: 2be46704-3ac5-4a65-8798-0957e8b317fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.token
+    - taxonomy.vocabulary.bracket
+  module:
+    - text
+id: taxonomy_term.bracket.token
+targetEntityType: taxonomy_term
+bundle: bracket
+mode: token
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

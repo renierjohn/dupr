@@ -1,0 +1,22 @@
+uuid: c388e20d-c5c6-4cdf-93c7-456de28e1359
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.bracket
+  module:
+    - text
+id: taxonomy_term.bracket.default
+targetEntityType: taxonomy_term
+bundle: bracket
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -152,6 +152,28 @@
 }
 
 
+.view-display-id-attachment_1 {
+  table {
+    tr.active {
+      background: var.$gray-200;
+      td {
+        &.score_a {
+          div:nth-child(odd) {
+            font-weight: bold;
+          }
+        }
+        &.score_b {
+          div:nth-child(even) {
+            font-weight: bold;
+          }
+        }
+        a {
+          color: var.$gray-900;
+        }
+      }
+    }
+  }
+}
 
 .views-table {
     td {

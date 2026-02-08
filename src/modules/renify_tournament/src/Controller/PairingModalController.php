@@ -27,7 +27,15 @@ class PairingModalController extends ControllerBase {
     );
   }
 
-  public function openForm(Request $request) {
+  public function openFormScoring(Request $request) {
+     return $this->getAjaxResponse($request, 'score');
+  }
+
+  public function openFormStanding(Request $request) {
+    return $this->getAjaxResponse($request, 'offcanvas');
+  }
+
+  protected function getAjaxResponse(Request $request, $view_mode_form) {
     $nid = $request->query->get('id');
     $response = new AjaxResponse();
 
@@ -37,7 +45,7 @@ class PairingModalController extends ControllerBase {
 
     if ($nid && $node = $this->entityTypeManager->getStorage('node')->load($nid)) {
       // Get the form using the 'offcanvas' mode we registered earlier
-      $form = $this->entityFormBuilder->getForm($node, 'offcanvas');
+      $form = $this->entityFormBuilder->getForm($node, $view_mode_form);
 
       // Hide Buttons.
       $form['actions']['preview']['#attributes']['class'][] = 'visually-hidden';
@@ -46,12 +54,12 @@ class PairingModalController extends ControllerBase {
       unset($form['advanced']);
       // Define modal options
       $options = [
-        'title' => 'Status',
+        'title' => $node->label(),
         'width' => '80%',
-        'dialogClass' => 'tournament-pairing-modal',
+        'dialogClass' => 'tournament-score-modal',
       ];
 
-      $response->addCommand(new OpenModalDialogCommand($node->label(), $form, $options));
+      $response->addCommand(new OpenModalDialogCommand($node->label(), $form, $options));;
     }
 
     return $response;

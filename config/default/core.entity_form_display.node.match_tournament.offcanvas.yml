@@ -1,0 +1,112 @@
+uuid: ee2f0011-f8d9-461c-a9fa-7c2ccb1106aa
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_form_mode.node.offcanvas
+    - field.field.node.match_tournament.field_bracket
+    - field.field.node.match_tournament.field_category
+    - field.field.node.match_tournament.field_match_lossser
+    - field.field.node.match_tournament.field_match_pairings
+    - field.field.node.match_tournament.field_match_score_a
+    - field.field.node.match_tournament.field_match_score_b
+    - field.field.node.match_tournament.field_match_winner
+    - field.field.node.match_tournament.field_tournament_id
+    - node.type.match_tournament
+  module:
+    - content_moderation
+    - path
+id: node.match_tournament.offcanvas
+targetEntityType: node
+bundle: match_tournament
+mode: offcanvas
+content:
+  created:
+    type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_match_pairings:
+    type: entity_reference_autocomplete
+    weight: 7
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_match_score_a:
+    type: number
+    weight: 11
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_match_score_b:
+    type: number
+    weight: 12
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_tournament_id:
+    type: entity_reference_autocomplete
+    weight: 6
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  field_bracket: true
+  field_category: true
+  field_match_lossser: true
+  field_match_winner: true
+  promote: true
+  sticky: true

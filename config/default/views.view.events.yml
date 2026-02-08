@@ -19,7 +19,6 @@ dependencies:
     - field.storage.node.field_score_deviation
     - field.storage.node.field_status
     - field.storage.node.field_tournament_categories
-    - field.storage.node.field_tournament_id
     - field.storage.node.field_win
     - image.style.thumbnail
     - node.type.match_tournament
@@ -837,6 +836,72 @@ display:
     display_options:
       title: Matches
       fields:
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
+          label: ID
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         title:
           id: title
           table: node_field_data
@@ -850,8 +915,8 @@ display:
           label: 'Match #'
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "<a href=\"/form/tournaments/score?id={{ nid }}&redirect={{ path('<current>') }}\" \r\n   class=\"use-ajax\" \r\n   data-dialog-type=\"modal\" \r\n   data-dialog-options='{\"width\":500}'>\r\n   {{ title }}\r\n</a>"
             make_link: false
             path: ''
             absolute: false
@@ -891,7 +956,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -976,8 +1041,8 @@ display:
           label: 'Match Pairings'
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "<div>\r\n{{ field_match_pairings }}\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1026,7 +1091,7 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ' & '
+          separator: ''
           field_api_classes: false
         field_match_score_a:
           id: field_match_score_a
@@ -1039,8 +1104,8 @@ display:
           label: 'Team A'
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "<a href=\"/form/tournaments/score?id={{ nid }}&redirect={{ path('<current>') }}\" \r\n   class=\"use-ajax match-score-a\" \r\n   data-dialog-type=\"modal\" \r\n   data-dialog-options='{\"width\":500}'>\r\n   {{ field_match_score_a }}\r\n</a>"
             make_link: false
             path: ''
             absolute: false
@@ -1103,8 +1168,8 @@ display:
           label: 'Team B'
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "<a href=\"/form/tournaments/score?id={{ nid }}&redirect={{ path('<current>') }}\" \r\n   class=\"use-ajax match-score-b\" \r\n   data-dialog-type=\"modal\" \r\n   data-dialog-options='{\"width\":500}'>\r\n   {{ field_match_score_b }}\r\n</a>"
             make_link: false
             path: ''
             absolute: false
@@ -1147,69 +1212,6 @@ display:
             thousand_separator: ''
             prefix_suffix: false
           group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_tournament_id:
-          id: field_tournament_id
-          table: node__field_tournament_id
-          field: field_tournament_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Tournament ID'
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -1426,14 +1428,37 @@ display:
           row_class: ''
           default_row_class: true
           columns:
+            nid: nid
+            field_match_score_a_1: field_match_score_a_1
+            field_match_score_b_1: field_match_score_b_1
             title: title
             field_bracket: field_bracket
             field_match_pairings: field_match_pairings
             field_match_score_a: field_match_score_a
             field_match_score_b: field_match_score_b
-            field_tournament_id: field_tournament_id
           default: '-1'
           info:
+            nid:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_match_score_a_1:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_match_score_b_1:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
             title:
               sortable: false
               default_sort_order: asc
@@ -1461,13 +1486,6 @@ display:
               empty_column: false
               responsive: ''
             field_match_score_b:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_tournament_id:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -1519,7 +1537,6 @@ display:
         - 'config:field.storage.node.field_match_pairings'
         - 'config:field.storage.node.field_match_score_a'
         - 'config:field.storage.node.field_match_score_b'
-        - 'config:field.storage.node.field_tournament_id'
   block_1:
     id: block_1
     display_title: 'Registered Players'
@@ -1671,7 +1688,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<a href=\"/form/tournaments/pairings?id={{ nid }}\" \r\n   class=\"use-ajax {{ field_status|lower|clean_class|replace({'--': ' '}) }}\" \r\n   data-dialog-type=\"modal\" \r\n   data-dialog-options='{\"width\":500}'>\r\n   {{ title }}\r\n</a>"
+            text: "<a href=\"/form/tournaments/pairings?id={{ nid }}&redirect={{ path('<current>') }}\" \r\n   class=\"use-ajax {{ field_status|lower|clean_class|replace({'--': ' '}) }}\" \r\n   data-dialog-type=\"modal\" \r\n   data-dialog-options='{\"width\":500}'>\r\n   {{ title }}\r\n</a>"
             make_link: false
             path: ''
             absolute: false
@@ -2772,7 +2789,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<a href=\"/form/tournaments/pairings?id={{ nid }}\" \r\n   class=\"use-ajax {{ field_status|lower|clean_class|replace({'--': ' '}) }}\" \r\n   data-dialog-type=\"modal\" \r\n   data-dialog-options='{\"width\":500}'>\r\n   {{ title }}\r\n</a>"
+            text: "<a href=\"/form/tournaments/pairings?id={{ nid }}&redirect={{ path('<current>') }}\" \r\n   class=\"use-ajax {{ field_status|lower|clean_class|replace({'--': ' '}) }}\" \r\n   data-dialog-type=\"modal\" \r\n   data-dialog-options='{\"width\":500}'>\r\n   {{ title }}\r\n</a>"
             make_link: false
             path: ''
             absolute: false
@@ -3084,7 +3101,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: PL
+          label: PF
           exclude: false
           alter:
             alter_text: false

@@ -4,8 +4,8 @@ group-stage:
       js/dist/assets/index.css: {}
   js:
     js/dist/assets/index.js: {}
-    js/module.js: {}
+    js/drupal__group_stage.js: {}
 
 ajax-link:
   js:
-    js/module_ajax.js: {}
+    js/drupal__views_table.js: {}
