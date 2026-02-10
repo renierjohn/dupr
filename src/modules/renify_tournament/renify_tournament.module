@@ -106,12 +106,6 @@ function renify_tournament_form_node_form_alter(&$form, FormStateInterface $form
   }
 }
 
-function renify_tournament_node_presave(\Drupal\node\NodeInterface $node) {
-  if ($node->bundle() === 'match_tournament') {
-    \Drupal::service('renify_tournament.score_generator')->save($node);
-  }
-}
-
 /**
  * AJAX callback to close modal and redirect to a specific node's alias.
  */

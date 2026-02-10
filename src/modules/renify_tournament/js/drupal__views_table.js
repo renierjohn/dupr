@@ -24,8 +24,11 @@
 
         if (score_a > score_b) {
           $(el).find('.views-field-field-match-pairings').addClass('score_a');
-        } else {
+          $(el).find('.views-field-field-match-score-a').css('font-weight', 'bold');
+        }
+        if (score_a < score_b) {
           $(el).find('.views-field-field-match-pairings').addClass('score_b');
+          $(el).find('.views-field-field-match-score-b').css('font-weight', 'bold');
         }
       })
     }

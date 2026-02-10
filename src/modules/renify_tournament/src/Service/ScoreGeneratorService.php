@@ -33,82 +33,24 @@ class ScoreGeneratorService {
   }
 
   protected function saveCalculatedPoints($node, $pairings, $score_a, $score_b) {
-    $team_a_win_count = 0;
-    $team_a_loss_count = 0;
-    $team_a_PF = 0;
-    $team_a_PA = 0;
-    $team_a_Div = 0;
 
-    $team_b_win_count = 0;
-    $team_b_loss_count = 0;
-    $team_b_PF = 0;
-    $team_b_PA = 0;
-    $team_b_Div = 0;
-
-    $team_a_winner = $this->getMatchResultNodes($node, $pairings[0]->entity, 'field_match_winner');
-    $team_a_losser = $this->getMatchResultNodes($node, $pairings[0]->entity, 'field_match_lossser');
-
-    $team_b_winner = $this->getMatchResultNodes($node, $pairings[1]->entity, 'field_match_winner');
-    $team_b_losser = $this->getMatchResultNodes($node, $pairings[1]->entity, 'field_match_lossser');
-
-    foreach ($team_a_winner as $team_a_win) {
-      $score_a = $team_a_win->field_match_score_a->value;
-      $team_a_PF += intval($score_a);
-
-      $score_b = $team_a_win->field_match_score_b->value;
-      $team_a_PA += intval($score_b);
-    }
-
-    foreach ($team_a_losser as $team_a_loss) {
-      $score_a = $team_a_loss->field_match_score_a->value;
-      $team_a_PF += intval($score_a);
-
-      $score_b = $team_a_loss->field_match_score_b->value;
-      $team_a_PA += intval($score_b);
-    }
-
-    foreach ($team_b_winner as $team_b_win) {
-      $score_b = $team_b_win->field_match_score_b->value;
-      $team_b_PF += intval($score_b);
-
-      $score_a = $team_b_win->field_match_score_a->value;
-      $team_b_PA += intval($score_a);
-    }
-
-    foreach ($team_b_losser as $team_b_loss) {
-      $score_b = $team_b_loss->field_match_score_b->value;
-      $team_b_PF += intval($score_b);
-
-      $score_a = $team_b_loss->field_match_score_a->value;
-      $team_b_PA += intval($score_a);
-    }
-
-
-    $team_a_win_count = count($team_a_winner);
-    $team_a_loss_count = count($team_a_losser);
-
-    $team_b_win_count = count($team_b_winner);
-    $team_b_loss_count = count($team_b_losser);
-
-    $team_a_Div = $team_a_PF - $team_a_PA;
-    $team_b_Div = $team_b_PF - $team_b_PA;
-
-// dump($team_b_win_count, $team_b_loss_count, $team_b_PF, $team_b_PA, $team_b_Div, $team_b_losser);
+    $pair_a = $this->getScore_PF_PA($node, $pairings[0]->entity);
+    $pair_b = $this->getScore_PF_PA($node, $pairings[1]->entity);
 
     $pairings[0]->entity
-      ->set('field_win', $team_a_win_count)
-      ->set('field_loss', $team_a_loss_count)
-      ->set('field_points_for', $team_a_PF)
-      ->set('field_points_against', $team_a_PA)
-      ->set('field_score_deviation', $team_a_Div)
+      ->set('field_win', $pair_a['win'])
+      ->set('field_loss', $pair_a['loss'])
+      ->set('field_points_for', $pair_a['pf'])
+      ->set('field_points_against', $pair_a['pa'])
+      ->set('field_score_deviation', $pair_a['pd'])
       ->save();
 
     $pairings[1]->entity
-      ->set('field_win', $team_b_win_count)
-      ->set('field_loss', $team_b_loss_count)
-      ->set('field_points_for', $team_b_PF)
-      ->set('field_points_against', $team_b_PA)
-      ->set('field_score_deviation', $team_b_Div)
+      ->set('field_win', $pair_b['win'])
+      ->set('field_loss', $pair_b['loss'])
+      ->set('field_points_for', $pair_b['pf'])
+      ->set('field_points_against', $pair_b['pa'])
+      ->set('field_score_deviation', $pair_b['pd'])
       ->save();
   }
 
@@ -138,15 +80,69 @@ class ScoreGeneratorService {
     return $this->entityTypeManager->getStorage('node')->loadMultiple($nids);
   }
 
-  protected function getScorePL() {
+  protected function getScore_PF_PA($node, $pairing_entity) {
+    $team_win_arr = $this->getMatchResultNodes($node, $pairing_entity, 'field_match_winner');
+    $team_loss_arr = $this->getMatchResultNodes($node, $pairing_entity, 'field_match_lossser');
 
+    $team_PF = 0;
+    $team_PA = 0;
+
+    $team_win_count = 0;
+    $team_loss_count = 0;
+
+    foreach ($team_win_arr as $team_win) {
+      $pairings = $team_win->field_match_pairings;
+
+      // Check the array position of winner team.
+      if ($pairings[0]->target_id == $pairing_entity->id()) {
+        $score_win = $team_win->field_match_score_a->value;
+        $score_loss = $team_win->field_match_score_b->value;
+
+        $team_PF = intval($score_win) + $team_PF;
+        $team_PA = intval($score_loss) + $team_PA;
+
+        $team_win_count = $team_win_count + 1;
+      } else {
+        $score_win = $team_win->field_match_score_b->value;
+        $score_loss = $team_win->field_match_score_a->value;
+
+        $team_PF = intval($score_win) + $team_PF;
+        $team_PA = intval($score_loss) + $team_PA;
+
+        $team_win_count = $team_win_count + 1;
+      }
+    }
+
+    foreach ($team_loss_arr as $team_loss) {
+      $pairings = $team_loss->field_match_pairings;
+
+      // Check the array position of losser team.
+      if ($pairings[0]->target_id == $pairing_entity->id()) {
+        $score_win = $team_loss->field_match_score_b->value;
+        $score_loss = $team_loss->field_match_score_a->value;
+
+        $team_PF = intval($score_loss) + $team_PF;
+        $team_PA = intval($score_win) + $team_PA;
+
+        $team_loss_count = $team_loss_count + 1;
+      } else {
+        $score_win = $team_loss->field_match_score_a->value;
+        $score_loss = $team_loss->field_match_score_b->value;
+
+        $team_PF = intval($score_loss) + $team_PF;
+        $team_PA = intval($score_win) + $team_PA;
+
+        $team_loss_count = $team_loss_count + 1;
+      }
+    }
+
+    return [
+      'win' => $team_win_count,
+      'loss' => $team_loss_count,
+      'pf' => $team_PF,
+      'pa' => $team_PA,
+      'pd' => ($team_PF - $team_PA)
+    ];
   }
 
-  protected function getScorePA() {
-
-  }
-
-  protected function getScoreDeviation() {
-
-  }
 }
