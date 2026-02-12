@@ -80,7 +80,7 @@ class PairingCsvUploadForm extends FormBase {
           <i class="fas fa-magic"></i> {{ label }}
         </button>',
       '#context' => [
-        'label' => $this->t('Generate Match'),
+        'label' => $this->t('Create Match'),
       ],
     ];
 

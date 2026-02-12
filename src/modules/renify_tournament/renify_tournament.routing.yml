@@ -15,6 +15,14 @@ renify_tournament.group_stage:
   requirements:
     _permission: 'access content'
 
+renify_tournament.group_stage.create:
+  path: '/tournaments/group-stage/create'
+  defaults:
+    _controller: '\Drupal\renify_tournament\Controller\GroupStageController::createMatch'
+    _title: 'Group Stage'
+  requirements:
+    _permission: 'import tournament pairings'
+
 # Form modal for Player Standing.
 renify_tournament.pairing_edit_modal:
   path: '/form/tournaments/pairings'

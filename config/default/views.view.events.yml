@@ -830,7 +830,7 @@ display:
         - 'config:field.storage.node.field_rating_singles'
   attachment_1:
     id: attachment_1
-    display_title: 'Match as Attachment'
+    display_title: 'Match Summary'
     display_plugin: attachment
     position: 2
     display_options:
@@ -3605,7 +3605,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<h2>\r\n<a href=\"/node/{{ raw_arguments.field_tournament_joined_target_id }}\" class=\"button\"><i class=\"fas fa-arrow-left\"></i>&nbsp;Go Back Tournament</a>\r\n<a href=\"/tournaments/group-stage?tid={{ raw_arguments.field_tournament_joined_target_id }}&cid={{ raw_arguments.field_category_target_id }}\" class=\"button button--primary\">Group Stage Match&nbsp;<i class=\"fas fa-arrow-right\"></i></a>\r\n</h2>"
+            value: "<h2>\r\n<a href=\"/node/{{ raw_arguments.field_tournament_joined_target_id }}\" class=\"button\"><i class=\"fas fa-arrow-left\"></i>&nbsp;Go Back Tournament</a>\r\n<a href=\"/tournaments/group-stage/create?tid={{ raw_arguments.field_tournament_joined_target_id }}&cid={{ raw_arguments.field_category_target_id }}\" class=\"button\"><i class=\"fas fa-magic\"></i>&nbsp;Create Group Stage</a>\r\n<a href=\"/tournaments/group-stage?tid={{ raw_arguments.field_tournament_joined_target_id }}&cid={{ raw_arguments.field_category_target_id }}\" class=\"button button--primary\">Group Stage Match&nbsp;<i class=\"fas fa-arrow-right\"></i></a>\r\n</h2>"
             format: full_html
           tokenize: true
         entity_taxonomy_term:
@@ -3646,7 +3646,7 @@ display:
     display_plugin: rest_export
     position: 4
     display_options:
-      enabled: false
+      enabled: true
       title: 'API Group Stage'
       fields:
         title:

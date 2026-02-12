@@ -43,6 +43,10 @@ class GroupStageController extends ControllerBase
             );
     }
 
+    public function createMatch() {
+
+    }
+
     /**
      * Renders the group stage page.
      */

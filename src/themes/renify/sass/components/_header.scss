@@ -5,6 +5,10 @@ header {
     min-height: unset;
     border-bottom: 1px solid var.$gray-200;
 
+    .site-header__fixable.is-fixed {
+      top: 1rem;
+    }
+
     a[data-drupal-link-system-path="search"]:before {
       content: "\f002"; /* Unicode for magnifying glass */
       font-family: "Font Awesome 6 Free";
