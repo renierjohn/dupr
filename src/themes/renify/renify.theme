@@ -2,10 +2,57 @@
 
 declare(strict_types=1);
 
+use Drupal\Component\Utility\Html;
+use Drupal\Component\Utility\UrlHelper;
+
 /**
  * @file
  * Functions to support theming in the Renify theme.
  */
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function renify_page_attachments_alter(array &$attachments) {
+  $request = \Drupal::request();
+  $raw_query = $request->query->all();
+
+  // 1. Define your "Allowed List" of parameters
+  $allowed_params = ['ref', 'filter', 'page'];
+
+  // 2. Filter the incoming query to ONLY include allowed keys
+  $filtered_query = array_intersect_key($raw_query, array_flip($allowed_params));
+
+  if (!empty($filtered_query)) {
+    $safe_params = [];
+    foreach ($filtered_query as $key => $value) {
+      // Basic sanitation for the value
+      if (is_string($value)) {
+        $safe_params[$key] = Html::escape($value);
+      }
+    }
+
+    // 3. Update the canonical link
+    foreach ($attachments['#attached']['html_head'] as $key => $head_element) {
+      if (isset($head_element[1]) && $head_element[1] === 'canonical_url') {
+
+        $current_href = $attachments['#attached']['html_head'][$key][0]['#attributes']['href'];
+
+        // Build the safe query string
+        $query_string = UrlHelper::buildQuery($safe_params);
+        $separator = (str_contains($current_href, '?')) ? '&' : '?';
+
+        $attachments['#attached']['html_head'][$key][0]['#attributes']['href'] = $current_href . $separator . $query_string;
+
+        // 4. Update Cache Contexts specifically for these parameters
+        // This is more efficient than the generic 'url.query_args'
+        foreach (array_keys($safe_params) as $param_name) {
+          $attachments['#cache']['contexts'][] = 'url.query_args:' . $param_name;
+        }
+      }
+    }
+  }
+}
 
 /**
  * Implements hook_preprocess_HOOK() for html.html.twig.

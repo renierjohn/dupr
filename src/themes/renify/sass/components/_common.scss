@@ -3,13 +3,13 @@
 
 a {
   &.elimination {
-    color: var.$gray-400;
-  }
-  &.elimination.quarter-finals {
     color: var.$gray-800;
   }
+  &.elimination.quarter-finals {
+    color: #e74c3c;
+  }
   &.elimination.quarter-finals.semi-finals, &.elimination.semi-finals {
-    color: var.$gray-900;
+    color: #1a00ff;
     font-weight: 500;
   }
   &.elimination.quarter-finals.semi-finals.fighting-for-third, &.elimination.semi-finals.fighting-for-third {
